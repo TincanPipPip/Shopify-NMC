@@ -2,3 +2,12 @@ development:
   password: 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
   theme_id: "113394647193"
   store: angelou-unt.myshopify.com
+  ignore_files:
+    - config/settings_data.json
+
+production:
+  password: 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
+  theme_id: "287866192027"
+  store: nmc-recordings.myshopify.com
+  ignore_files:
+    - config/settings_data.json
