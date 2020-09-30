@@ -1,0 +1,32 @@
+/**
+ * ----------------------
+ * Un.titled
+ * Molecules - Entities
+ * ----------------------
+ */
+
+.m-entity {
+  margin: $bump * 1.5 0;
+
+  @include media('<sm') {
+    margin: $bump 0;
+  }
+
+  img {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+
+  @import './entities/body';
+  @import './entities/image';
+  @import './entities/view';
+  @import './entities/quote';
+  @import './entities/accordion';
+  @import './entities/gallery';
+  @import './entities/image-text';
+  @import './entities/downloads';
+  @import './entities/signposts';
+  @import './entities/partnership-logo';
+  @import './entities/organisation-links';
+}

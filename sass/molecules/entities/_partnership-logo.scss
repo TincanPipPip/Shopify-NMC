@@ -1,0 +1,19 @@
+&__partnership-logo {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+
+  border-left: 1px solid $c-primary;
+  padding: 0 0 0 ($bump * 2);
+
+  img {
+    max-width: 60px;
+  }
+
+  &__text {
+    font-size: 14px;
+    font-weight: bold;
+    letter-spacing: 0;
+    line-height: 24px;
+  }
+}

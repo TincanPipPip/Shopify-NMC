@@ -1,0 +1,54 @@
+/**
+* ----------------------
+* Un.titled
+* Molecules - Footer nav
+* ----------------------
+*/
+
+/**
+* Config
+*/
+
+/**
+* Styling
+*/
+.m-footer-nav {
+  @include media('<md') {
+    margin-right: 0;
+    display: flex;
+    justify-content: center;
+    align-items: stretch;
+    width: 100%;
+  }
+
+  ul.menu {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-wrap: wrap;
+
+    @include media('<md') {
+      flex-direction: column;
+      justify-content: center;
+    }
+  }
+
+  li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0 $bump 0 0;
+
+    &:last-of-type::after {
+      margin: 0;
+    }
+
+    @include media('<md') {
+      margin: 0 0 ($bump) 0;
+    }
+  }
+
+  a.is-active {
+    text-decoration: underline;
+  }
+}

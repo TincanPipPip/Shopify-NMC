@@ -1,0 +1,37 @@
+/**
+* ----------------------
+* Un.titled
+* Molecules - Overlay
+* ----------------------
+*/
+
+/**
+* Config
+*/
+
+/**
+* Styling
+*/
+.m-overlay {
+  display: flex;
+  justify-content: center;
+  align-items:flex-start;
+  flex-direction: column;
+
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  opacity: 0;
+  z-index: -20;
+  background-color: $c-primary;
+
+  [data-search='open'] & {
+    animation: fadeIn 0.2s ease-in forwards;
+  }
+
+  [data-search='closed'] & {
+    animation: fadeOut 0.2s 0.4s ease-in forwards;
+  }
+}

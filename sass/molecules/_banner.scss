@@ -1,0 +1,63 @@
+/**
+ * ----------------------
+ * Un.titled
+ * Molecules - Banner
+ * ----------------------
+ */
+
+.m-no-banner {
+  margin-top: $bump * 3;
+
+  @include media('<sm') {
+    margin-top: $bump;
+  }
+}
+
+.m-banner {
+  position: relative;
+
+  &__image {
+    @include bottom-tilt;
+    position: relative;
+  }
+
+  &__image-credit {
+  }
+
+  &__speech-marks {
+    p {
+      &:before {
+        content: '\201C';
+      }
+
+      &:after {
+        content: '\201D';
+      }
+    }
+  }
+
+  &__copy {
+    position: absolute;
+    z-index: 2;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: $c-white;
+    background: rgba(0, 66, 109, 0.25);
+
+    .grid {
+      width: 100%;
+    }
+  }
+
+  img {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+}

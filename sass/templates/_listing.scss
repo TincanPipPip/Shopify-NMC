@@ -1,0 +1,227 @@
+/**
+ * ----------------------
+ * Un.titled
+ * Templates - Listing Page
+ * ----------------------
+ */
+$animate: all 0.8s ease-in-out;
+
+.ct__listing {
+  &__form-inner {
+    display: flex;
+    align-items: center;
+  }
+
+  &__form-wrapper {
+    background: $c-off-white;
+    margin: 0 0 50px;
+
+    &--sticky {
+    }
+
+    &--inner {
+      display: flex;
+      padding: 0 ($bump / 2);
+      align-items: center;
+
+      body.composers & {
+        flex-wrap: wrap;
+      }
+    }
+
+    header {
+      font-size: 16px;
+      font-weight: bold;
+      letter-spacing: 0;
+      line-height: 36px;
+
+      body.composers & {
+        margin: 0 ($bump * 2) 0 0;
+      }
+
+      @include media('<md') {
+        display: none;
+      }
+    }
+
+    header {
+      body.composers & {
+        font-size: 16px;
+        font-weight: bold;
+        letter-spacing: 0;
+        line-height: 36px;
+      }
+    }
+
+    form {
+      margin: 0 0 0 ($bump);
+      width: 100%;
+
+      @include media('<md') {
+        margin: 0;
+      }
+    }
+
+    select {
+      appearance: none;
+      width: 75%;
+      background: $c-white;
+      color: $c-grey;
+    }
+
+    button {
+      @include btn;
+      @include btn-secondary;
+      transform: none;
+      padding: 18px 40px;
+
+      @include media('<md') {
+        transform: none;
+        padding: 18px 40px;
+      }
+    }
+
+    label {
+    }
+
+    #edit-reset {
+      display: none;
+    }
+
+    .js-form-item,
+    .js-form-wrapper {
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .js-form-item {
+      position: relative;
+      margin: 0 40px;
+      width: 100%;
+      max-width: 400px;
+
+      display: flex;
+      justify-content: space-between;
+      flex-direction: row;
+
+      @include media('<md') {
+        flex-direction: column;
+        margin: 0 0 ($bump/2);
+      }
+
+      &::after {
+        content: '▼';
+        position: absolute;
+        top: 20px;
+        right: 15px;
+        z-index: 5;
+        font-size: 8px;
+
+        @include media('<md') {
+          top: 50%;
+          right: 20%;
+        }
+      }
+    }
+  }
+
+  &__form {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    flex-direction: row;
+    width: 100%;
+
+    @include media('<md') {
+      flex-direction: column;
+    }
+
+    .m-search & {
+      display: flex;
+
+      @include media('<md') {
+        flex-direction: row;
+      }
+    }
+  }
+
+  &__anchor-link {
+    margin: 0 0 0 ($bump/2);
+  }
+
+  &__wrapper {
+    body.search &,
+    body.discover & {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr 1fr;
+      gap: $bump/2;
+
+      @include media('<md') {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      @include media('<sm') {
+        grid-template-columns: 1fr;
+        gap: size(24px);
+      }
+    }
+  }
+
+  &__form-background {
+    transition: $animate;
+
+    &.is-sticky {
+      background-color: $c-white;
+      box-shadow: 0 2px 19px -4px rgba(0, 0, 0, 0.1);
+      padding: $bump;
+      left: 0 !important;
+      width: 100% !important;
+      z-index: 11;
+
+      & + .ct__listing__top-margin {
+        margin: 116px 0 0;
+      }
+    }
+
+    .ct__listing__form-wrapper {
+      margin: 0;
+    }
+  }
+
+  &__letter-section {
+    &__links {
+      display: grid;
+      gap: $bump/2;
+      grid-template-columns: 1fr 1fr 1fr;
+
+      .nmc-artist {
+        position: relative;
+        display: inline-block;
+
+        &:after {
+          content: '';
+
+          position: relative;
+          display: inline-block;
+          right: -10px;
+          border-radius: 10px;
+
+          background-color: $c-primary;
+          width: $bump/3;
+          height: $bump/3;
+        }
+      }
+
+      @include media('<md') {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+  }
+
+  &__top-margin {
+    margin: 50px 0 0;
+    transition: $animate;
+  }
+}

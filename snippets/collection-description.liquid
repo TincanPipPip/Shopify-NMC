@@ -1,0 +1,23 @@
+  {% if collection.image %}
+      <div class="collection-hero">
+        <div class="collection-hero__image ratio-container lazyload js"
+             data-bgset="{% include 'bgset', image: collection.image %}"
+             data-sizes="auto"
+             data-parent-fit="cover"
+             style="background-image: url('{{ collection.image | img_url: '300x300' }});"></div>
+        <noscript>
+          <div class="collection-hero__image" style="background-image: url({{ collection.image | img_url: '2048x600', crop: 'top' }});"></div>
+        </noscript>
+        <div class="collection-hero__title-wrapper">
+          <h1 class="collection-hero__title page-width">
+              <span class="visually-hidden">{{ 'collections.general.collection_label' | t }}: </span>
+              {{ collection.title }}
+          </h1>
+        </div>
+      </div>
+{% endif %}
+{% if collection.description != blank %}
+        <div class="rte collection-description page-width">
+          {{ collection.description }}
+        </div>
+      {% endif %}

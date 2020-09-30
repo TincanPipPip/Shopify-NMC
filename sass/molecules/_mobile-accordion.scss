@@ -1,0 +1,75 @@
+.mobile-accordion {
+  h3,
+  &__anchors {
+    @include media('<sm') {
+      display: none;
+    }
+  }
+
+  &__content-wrapper {
+  }
+
+  &__content {
+    height: 100%;
+    overflow: visible;
+
+    @include media('<sm') {
+      height: 0;
+      overflow: hidden;
+      transition: all 0.4s $easing;
+
+      &.active {
+        height: 100%;
+        overflow: visible;
+      }
+    }
+  }
+
+  &__entity {
+    @include media('<sm') {
+      margin: 0;
+    }
+  }
+
+  &__link {
+    display: none;
+
+    @include font-title;
+    font-size: 26px;
+    // @include ms-respond(font-size, 3);
+    line-height: 36px;
+    text-decoration: none;
+
+    &:active,
+    &:hover,
+    &:focus {
+      text-decoration: none;
+    }
+
+    @include media('<sm') {
+      display: flex;
+      width: 100%;
+      border-bottom: 1px solid $c-off-white;
+      text-align-last: left;
+      justify-content: space-between;
+      align-items: center;
+      @include font-title;
+
+      &:after {
+        content: '';
+        @include bg-img(cover);
+        height: $bump/2;
+        width: $bump/2;
+        @include icon('icon-arrow', 16);
+        transform: rotate(-90deg);
+        transition: all 0.4s $easing;
+      }
+
+      &.active {
+        &:after {
+          transform: rotate(90deg);
+        }
+      }
+    }
+  }
+}

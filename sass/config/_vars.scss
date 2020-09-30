@@ -1,0 +1,22 @@
+/**
+ * ----------------------
+ * Un.titled
+ * Config - Vars
+ * ----------------------
+ */
+
+$c-blue: #0077c3;
+$c-dark-blue: #0068aa;
+$c-off-white: #e5f1f9;
+$c-white: #ffffff;
+$c-black: #000000;
+$c-grey: #808080;
+$c-light-grey: #fafafa;
+
+$c-primary: #{$c-blue};
+$c-secondary: #{$c-off-white};
+
+// general purpose variable, should really be renamed but I don't know wtf to call it
+$bump: 30px;
+
+$easing: cubic-bezier(0.3, 0.65, 0.72, 0.63);

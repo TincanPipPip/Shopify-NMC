@@ -1,0 +1,73 @@
+/**
+ * ----------------------
+ * Un.titled
+ * Helpers - Global mixins
+ * ----------------------
+ */
+
+// Reset <li> elements
+@mixin li-reset {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+
+  li {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+}
+
+// Remove text from elements
+@mixin rm-text {
+  text-align: left;
+  text-indent: -9999px;
+}
+
+// Background images
+@mixin bg-img($size) {
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: $size;
+}
+
+// IE 9+ only
+@mixin ie($property, $value) {
+  @media screen and (min-width: 0\0) and (min-resolution: +72dpi) {
+    #{$property}: #{$value};
+  }
+}
+
+@mixin top-tilt {
+  clip-path: polygon(0 0, 100% 15%, 100% 100%, 0% 100%);
+
+  @include media('<md') {
+    clip-path: polygon(0 0, 100% 5%, 100% 100%, 0% 100%);
+  }
+
+  @include media('<sm') {
+    clip-path: polygon(0 0, 100% 2%, 100% 100%, 0% 100%);
+  }
+}
+
+@mixin bottom-tilt {
+  clip-path: polygon(0 0, 100% 0%, 100% 100%, 0% 85%);
+
+  @include media('<md') {
+    clip-path: polygon(0 0, 100% 0%, 100% 100%, 0% 85%);
+  }
+
+  @include media('<sm') {
+    clip-path: polygon(0 0, 100% 0%, 100% 100%, 0% 92%);
+  }
+}
+
+@mixin speech-marks {
+  &:before {
+    content: '\201C';
+  }
+
+  &:after {
+    content: '\201D';
+  }
+}

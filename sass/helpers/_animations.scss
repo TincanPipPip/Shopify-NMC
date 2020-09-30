@@ -1,0 +1,67 @@
+/**
+ * ----------------------
+ * Un.titled
+ * Helpers - Animation
+ * ----------------------
+ */
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    z-index: -20;
+  }
+
+  100% {
+    opacity: 0.95;
+    z-index: 20;
+  }
+}
+
+@keyframes fadeOut {
+  0% {
+    opacity: 0.95;
+    z-index: 20;
+  }
+
+  100% {
+    opacity: 0;
+    z-index: -20;
+  }
+}
+
+$animate: all 0.8s ease-in-out;
+
+@mixin underline-animation {
+  margin: 0 auto;
+  padding: 0;
+  transition: $animate;
+  position: relative;
+
+  &:before,
+  &:after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    width: 0px;
+    height: 5px;
+    margin: 5px 0 0;
+    transition: $animate;
+    transition-duration: 0.25s;
+    opacity: 0;
+    background-color: $c-primary;
+  }
+  &:before {
+    left: 50%;
+  }
+  &:after {
+    right: 50%;
+  }
+
+  &:hover {
+    &:before,
+    &:after {
+      opacity: 1;
+      width: 50%;
+    }
+  }
+}

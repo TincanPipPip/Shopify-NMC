@@ -1,0 +1,238 @@
+/**
+ * ----------------------
+ * Un.titled
+ * Organisms - Header
+ * ----------------------
+ */
+
+.o-header {
+  &__inner {
+  }
+
+  &__row {
+    display: flex;
+    justify-content: flex-end;
+    flex-direction: row;
+    align-items: center;
+  }
+
+  &__search {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    padding-top: 0;
+    padding-bottom: 0;
+
+    [data-nav='open'] & {
+      display: none;
+    }
+
+    span {
+      transform: none;
+    }
+
+    svg {
+      height: auto;
+      width: $bump/1.25;
+      fill: $c-white;
+      margin-left: $bump/2;
+
+      @include media('<md') {
+        margin-left: $bump/3;
+      }
+    }
+  }
+
+  &__cta {
+    margin: 0 24px;
+
+    &__wrapper {
+      display: flex;
+      flex-direction: row;
+    }
+
+    @include media('<lg') {
+      margin: 0 10px;
+    }
+  }
+
+  &__grid {
+    max-width: 100rem;
+    margin: 0 auto;
+    display: inline-flex;
+
+    &__items {
+      justify-content: space-between;
+      width: 100%;
+
+      @include media('<md') {
+        flex-direction: column-reverse;
+        align-items: flex-end;
+      }
+    }
+  }
+
+  &__top {
+    display: none;
+
+    &__cta {
+      text-decoration: none;
+      letter-spacing: normal;
+      word-spacing: normal;
+      transform: skew(15deg);
+
+      &__wrapper {
+        @include media('<sm') {
+          width: 100%;
+          border: none;
+          margin: 0;
+
+          &:hover {
+            text-decoration: none;
+            border: none;
+          }
+        }
+      }
+
+      &:hover {
+        text-decoration: none;
+        border: none;
+      }
+    }
+
+    &__hide {
+      @include media('<sm') {
+        display: none;
+      }
+    }
+
+    .o-header__cta__wrapper {
+      margin: auto;
+      width: 100%;
+    }
+
+    @include media('<sm') {
+      display: block;
+      background: white;
+      z-index: 11;
+      position: relative;
+      transition: all 0.2s $easing;
+
+      &:hover {
+        background: $c-primary;
+        color: $c-secondary;
+      }
+    }
+  }
+
+  &__middle {
+    background-color: $c-dark-blue;
+
+    [data-nav='open'] & {
+      @include media('<sm') {
+        z-index: 11;
+        position: relative;
+      }
+    }
+
+    &__btn {
+      padding-top: 0;
+      padding-bottom: 0;
+
+      @include media('<md') {
+        display: none;
+      }
+
+      &:last-of-type {
+        padding: 0 0 0 18px;
+      }
+    }
+
+    &__shop {
+      @include media('<md') {
+        display: none;
+      }
+    }
+  }
+
+  &__menu {
+    display: none;
+    padding-top: 0;
+    padding-bottom: 0;
+
+    @include media('<md') {
+      display: block;
+    }
+
+    @include media('<sm') {
+      padding-right: 0;
+      padding-left: 0;
+    }
+  }
+
+  &__bottom {
+    display: flex;
+    background-color: $c-white;
+    box-shadow: 0 2px 19px -4px rgba(0, 0, 0, 0.1);
+
+    @include media('<sm') {
+      display: none;
+
+      [data-nav='open'] & {
+        display: block;
+      }
+    }
+
+    &__shop {
+      @include media('<sm') {
+        display: none;
+      }
+    }
+  }
+
+  &__spacer {
+    width: 100%;
+    max-width: ($bump * 8);
+
+    @include media('<md') {
+      max-width: ($bump * 9.5);
+    }
+
+    @include media('<sm') {
+      display: none;
+    }
+  }
+
+  &__logo {
+    display: block;
+    padding: ($bump * 2) ($bump * 2) ($bump * 2) $bump;
+    transition: all 0.2s $easing;
+
+    @include media('<sm') {
+      padding: ($bump * 0.75) 0 ($bump * 0.75) ($bump * 0.3725);
+    }
+
+    svg {
+      width: 218px;
+      height: 49px;
+
+      @include media('<sm') {
+        width: 105px;
+        height: 24px;
+      }
+    }
+
+    &__wrapper {
+      position: absolute;
+      clip-path: polygon(0 0, 60% 0, 100% 100%, 0% 100%);
+      background-color: $c-primary;
+      max-width: 350px;
+      width: 100%;
+      z-index: 10;
+
+      @include media('<sm') {
+        max-width: 168px;
+      }
+    }
+  }
+}

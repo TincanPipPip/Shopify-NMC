@@ -1,0 +1,57 @@
+/**
+* ----------------------
+* Un.titled
+* Molecules - Shop
+* ----------------------
+*/
+
+/**
+* Config
+*/
+
+/**
+* Styling
+*/
+.m-shop {
+  position: relative;
+  background-color: $c-black;
+  color: $c-white;
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 0;
+    opacity: 0.4;
+  }
+
+  &__content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: $bump * 2.5 $bump/2;
+    position: relative;
+    text-align: center;
+    text-align-last: center;
+
+    @include media('<lg') {
+      padding: $bump * 3 $bump/2;
+    }
+
+    @include media('<sm') {
+      padding: $bump * 2 $bump/2;
+    }
+
+    .m-entity {
+      margin: 0 0 $bump;
+    }
+
+    p {
+      max-width: 500px;
+    }
+  }
+}

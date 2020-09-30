@@ -1,0 +1,34 @@
+/**
+* ----------------------
+* Un.titled
+* Molecules - Downloads
+* ----------------------
+*/
+
+/**
+* Config
+*/
+
+/**
+* Styling
+*/
+&__downloads {
+  background-color: $c-off-white;
+  padding: 35px $bump;
+
+  .file {
+    padding-left: 0;
+    background-image: none;
+    @include font-title;
+
+    a {
+      &::after {
+        content: '';
+        @include bg-img(cover);
+        @include icon('icon-download', 15);
+        display: inline-block;
+        margin: 0 0 0 $bump/2;
+      }
+    }
+  }
+}

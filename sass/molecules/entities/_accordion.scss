@@ -1,0 +1,128 @@
+/**
+ * ----------------------
+ * Un.titled
+ * Molecules - Accordions
+ * ----------------------
+ */
+
+&__accordion {
+  .accordion {
+  }
+  .accordion__header {
+    display: flex;
+    width: 100%;
+    border: 0;
+    background-color: transparent;
+    text-align-last: left;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+
+    @include font-title;
+    font-size: 16px;
+    font-weight: 300;
+    letter-spacing: 0;
+    line-height: 26px;
+
+    @include media('<md') {
+      @include font-bold;
+    }
+
+    &::after {
+      content: '';
+      @include bg-img(cover);
+      height: $bump/2;
+      width: $bump/2;
+      @include icon('icon-chevron', 16);
+      transform: rotate(-90deg);
+      transition: all 0.2s $easing;
+    }
+
+    &:focus,
+    &[aria-expanded='true'] {
+      outline: none;
+    }
+
+    &[aria-expanded='true'] {
+      border-bottom: none;
+      &:after {
+        transform: none;
+      }
+    }
+
+    &[aria-expanded='false'] {
+      border-bottom: 1px solid $c-black;
+      &:after {
+        transform: rotate(-90deg);
+      }
+    }
+  }
+
+  .accordion__title {
+    margin: 16px 0 0 0;
+
+    border-top: 1px solid $c-black;
+    border-left: 1px solid $c-black;
+    border-right: 1px solid $c-black;
+  }
+
+  .js-accordion__panel {
+    display: none;
+  }
+
+  .accordion__panel {
+    display: block;
+    overflow: hidden;
+    opacity: 1;
+    transition: visibility 0s ease, max-height 0.2s ease, opacity 0.2s ease;
+    max-height: 100em;
+    visibility: visible;
+    transition-delay: 0s;
+
+    border-bottom: 1px solid $c-black;
+    border-left: 1px solid $c-black;
+    border-right: 1px solid $c-black;
+    padding: 0 20px;
+
+    p {
+      font-size: 16px;
+      font-weight: bold;
+      letter-spacing: 0;
+      line-height: 24px;
+
+      @include media('<md') {
+        font-weight: 300;
+      }
+    }
+
+    &[aria-hidden='true'] {
+      display: block;
+      max-height: 0;
+      opacity: 0;
+      visibility: hidden;
+      transition-delay: 0.2s, 0s, 0s;
+    }
+
+    p:last-child {
+      margin-bottom: $bump;
+    }
+  }
+
+  /* title opened */
+  // [aria-expanded='true']:after {
+  //   background-image: url("../icon/black/icon-chevron.svg") no-repeat;
+  // }
+  // /* title closed */
+  // [aria-expanded='false']:after {
+  //   background-image: url("../icon/black/icon-chevron.svg") no-repeat;
+  // }
+
+  // /* title selected */
+  // [aria-selected="true"]:after {
+  //   content: " (sel)";
+  // }
+  // /* title non selected */
+  // [aria-selected="false"]:after {
+  //   content: " (unselc)";
+  // }
+}

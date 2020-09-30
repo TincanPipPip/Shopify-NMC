@@ -1,0 +1,163 @@
+/**
+ * ----------------------
+ * Un.titled
+ * Organisms - sidebar
+ * ----------------------
+ */
+
+.o-sidebar {
+  background: $c-off-white;
+  clip-path: polygon(0 0, 100% 0%, 100% 100%, 0% 95%);
+
+  &__subnav {
+    clip-path: polygon(0 0, 100% 5%, 100% 100%, 0% 95%);
+  }
+
+  .o-sidebar__type {
+    margin: ($bump * 2) 0 $bump;
+
+    .a-btn.a-btn--blue {
+      @include btn;
+      @include btn-alt;
+      background: none;
+      padding: 0;
+    }
+  }
+
+  .o-sidebar__label {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+
+    margin: 0 0 $bump;
+
+    .m-entity__signposts__label {
+      margin: 0;
+    }
+
+    a {
+      @include btn;
+      @include btn-alt;
+      background-color: inherit;
+      border: inherit;
+      color: inherit;
+      background: none;
+      padding: 0;
+      text-transform: none;
+
+      margin: 0 0 ($bump/2);
+
+      &:hover {
+        background-color: inherit;
+        border: inherit;
+        color: inherit;
+        text-decoration: underline;
+      }
+    }
+  }
+
+  .a-btn--btn-icon {
+    margin: 0 0 $bump;
+    justify-content: center;
+  }
+
+  .a-btn--icon-blue {
+    svg {
+      fill: $c-primary;
+      width: 20px;
+      height: 23px;
+    }
+  }
+
+  &__mobile-hide {
+    @include media('<sm') {
+      display: none;
+    }
+  }
+
+  &__wrapper {
+    display: flex;
+    flex-direction: column;
+
+    @include media('<md') {
+      display: none;
+    }
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    align-items:flex-start;
+    padding: $bump $bump $bump * 2;
+
+    a {
+      padding-left: 0;
+      text-decoration: none;
+    }
+
+    h4 {
+      @include font-bold;
+    }
+  }
+
+  &__link {
+    clip-path: polygon(0 0, 100% 0%, 100% 100%, 0% 90%);
+
+    @include media('<md') {
+      transform: none;
+      span {
+        transform: none;
+      }
+    }
+  }
+
+  &__music-map-link {
+    display: flex;
+    justify-content: center;
+    margin: 0 0 $bump * 2;
+  }
+
+  &__menu {
+    & > ul.menu {
+      a {
+        &.is-active {
+          @include font-bold;
+        }
+      }
+
+      & > .menu-item {
+        list-style: none;
+      }
+
+      & > li:last-child a {
+        margin-bottom: 0;
+      }
+
+      .menu-item--active-trail > a {
+        @include font-bold;
+      }
+
+      ul.menu {
+        li {
+          list-style: disclosure-closed;
+          list-style-position: inside;
+
+          &.is-active-trail {
+            text-indent: 0px;
+            @include font-bold;
+            list-style-type: none;
+
+            a {
+              margin: 0 0 0 ($bump/3);
+            }
+
+            &:before {
+              content: '-';
+              text-indent: 0px;
+            }
+          }
+        }
+      }
+    }
+  }
+}

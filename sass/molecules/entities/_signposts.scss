@@ -1,0 +1,101 @@
+&__signposts {
+  &__wrapper {
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    display: grid;
+    gap: size(24px);
+
+    &--3 {
+      grid-template-columns: 1fr 1fr 1fr;
+    }
+
+    @include media('<sm') {
+      grid-template-columns: 1fr;
+      gap: size(24px);
+    }
+  }
+  &__thumb {
+    position: relative;
+    display: block;
+  }
+
+  &__border-top {
+    position: absolute;
+    height: 25px;
+    width: 100%;
+    background: $c-primary;
+
+    &::after {
+      content: '';
+      @include bg-img(cover);
+      @include icon('logo', 50);
+      height: 100%;
+      display: inline-block;
+      margin: 0 0 0 $bump/2;
+      right: 10px;
+      position: absolute;
+    }
+  }
+
+  &__content {
+    padding: ($bump * 0.666666666) ($bump/6) 0;
+    word-break: break-word;
+  }
+
+  &__label,
+  &__title,
+  &__copy,
+  &__link {
+  }
+
+  &__label {
+    padding: 0;
+
+    a {
+      margin: ($bump/3) $bump 0 (-$bump/3);
+    }
+
+    span {
+      background-color: $c-secondary;
+      box-shadow: 10px 0 0 $c-secondary, -10px 0 0 $c-secondary;
+      @include font-bold;
+      padding: 18px ($bump * 0.8);
+      color: $c-white;
+      line-height: 1;
+      text-decoration: none;
+      text-transform: uppercase;
+      text-align: center;
+      text-align-last: center;
+      background: $c-off-white;
+      color: $c-black;
+      padding: 8px 0;
+      line-height: 2.5;
+
+      display: inline;
+      box-decoration-break: clone;
+    }
+  }
+
+  &__filter {
+    display: inline-block;
+  }
+
+  &__copy {
+  }
+  &__title {
+    @include font-bold;
+    @include font-body;
+    letter-spacing: 0;
+    line-height: 24px;
+
+    body.home-page & {
+      font-size: 26px;
+    }
+
+    div.latest-releases & {
+      font-size: 16px;
+    }
+  }
+  &__link {
+    padding: 0;
+  }
+}

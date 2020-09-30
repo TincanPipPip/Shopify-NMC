@@ -1,0 +1,137 @@
+/**
+* ----------------------
+* Un.titled
+* Molecules - Search
+* ----------------------
+*/
+
+/**
+* Config
+*/
+
+/**
+* Styling
+*/
+.m-search {
+  &__inner {
+    height: 100%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    flex-direction: column;
+    color: $c-white;
+    padding-top: $bump * 3;
+
+    @include media('<sm') {
+      padding-top: $bump * 1.5;
+    }
+  }
+
+  & > section {
+    width: 100%;
+  }
+
+  .m-block {
+    width: 100%;
+  }
+
+  form {
+    padding: $bump 0 $bump * 3;
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 50px;
+
+    @include media('<sm') {
+      padding: 0 0 $bump * 1.5;
+    }
+
+    .js-form-item,
+    .form-actions {
+      margin: 0;
+    }
+
+    input[type='text'] {
+      width: 100%;
+      background-color: $c-white;
+      border: 0;
+      border-bottom: 1px solid $c-white;
+      height: 50px;
+      color: $c-black;
+      padding: $bump/2;
+      border-radius: 0;
+      transition: 0.1s $easing;
+
+      font-size: 26px;
+      line-height: 24px;
+      letter-spacing: normal;
+      @include font-bold;
+
+      &:focus {
+        border-bottom-color: $c-secondary;
+      }
+    }
+
+    .a-btn {
+      @include rm-text;
+      @include bg-img(25px);
+      padding: 0;
+      background-color: $c-white;
+      background-image: url('../icon/search-blue.svg');
+      height: 50px;
+      width: 50px;
+      border: 0;
+      border-radius: 0;
+
+      &:hover {
+        background-color: $c-secondary;
+      }
+    }
+
+    .ct__listing__form {
+      .form-type-textfield {
+        flex-grow: 1;
+      }
+    }
+  }
+
+  &__suggestions {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-wrap: wrap;
+
+    a {
+      @include font-bold;
+      cursor: pointer;
+      padding: 18px ($bump * 0.8);
+      color: $c-white;
+      line-height: 1;
+      text-decoration: none;
+      text-transform: uppercase;
+      text-align: center;
+      text-align-last: center;
+      background-color: $c-primary;
+      border: 1px $c-white solid;
+      color: $c-white;
+      margin-right: $bump;
+      margin-bottom: $bump/2;
+      border: 1px $c-white solid;
+      transition: all 0.2s $easing;
+
+      @include media('<sm') {
+        background-color: $c-white;
+        border: 1px $c-primary solid;
+        color: $c-primary;
+        margin-right: $bump/2;
+      }
+
+      &:last-of-type {
+        margin-right: 0;
+      }
+    }
+  }
+}
+
+body[data-search='open'] {
+  overflow: hidden;
+}
