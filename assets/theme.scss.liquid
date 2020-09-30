@@ -890,10 +890,6 @@ select {
   -webkit-text-size-adjust: 100%;
 }
 
-a {
-  background-color: transparent;
-}
-
 b,
 strong {
   font-weight: $font-weight-body--bolder;
@@ -1568,25 +1564,6 @@ h6 {
   }
 }
 
-/*================ Paragraph styles ================*/
-p {
-  color: $color-body-text;
-  margin: 0 0 ($section-spacing-small / 1.8);
-
-  @include media-query($small) {
-    font-size: em($font-size-base - 1);
-  }
-
-  &:last-child {
-    margin-bottom: 0;
-  }
-}
-
-/*================ Lists ================*/
-li {
-  list-style: none;
-}
-
 /*================ Misc styles ================*/
 .fine-print {
   font-size: em(14);
@@ -1870,17 +1847,6 @@ ol {
   max-width: 100%;
   overflow: auto;
   -webkit-overflow-scrolling: touch;
-}
-
-/*================ #Links and Buttons ================*/
-a {
-  color: $color-text;
-  text-decoration: none;
-
-  &:not([disabled]):hover,
-  &:focus {
-    color: $color-text-focus;
-  }
 }
 
 .password-powered-by a {

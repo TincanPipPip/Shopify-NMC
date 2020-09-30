@@ -29,7 +29,7 @@
     transform: skew(15deg);
   }
 
-  @include media('<xs') {
+  @include media("<xs") {
     padding-left: $bump/2;
     padding-right: $bump/2;
   }
@@ -60,7 +60,7 @@
   transform: skew(-15deg) scaleX(1);
   background-color: $c-primary;
 
-  @include media('<md') {
+  @include media("<md") {
     display: flex;
     justify-content: center;
     transform: skew(-15deg) scaleX(0.975);
@@ -107,7 +107,7 @@
   position: relative;
 
   &:after {
-    content: '';
+    content: "";
     @include bg-img(15px);
     position: relative;
     display: inline-block;
@@ -138,7 +138,7 @@
 @mixin arrow-white {
   &:hover {
     &:after {
-      background-image: url('../icon/icon-chevron-white.svg');
+      background-image: url("icon-chevron-white.svg");
     }
   }
 }
@@ -146,7 +146,7 @@
 @mixin arrow-blue {
   &:hover {
     &:after {
-      background-image: url('../icon/icon-chevron-blue.svg');
+      background-image: url("icon-chevron-blue.svg");
     }
   }
 }
@@ -220,7 +220,7 @@
     padding: 0 0 ($bump/3);
 
     &:after {
-      content: '';
+      content: "";
       height: 4px;
       width: 100%;
       position: absolute;
@@ -230,7 +230,7 @@
     }
 
     &:before {
-      content: '';
+      content: "";
       height: 4px;
       width: 0%;
       position: absolute;
@@ -247,7 +247,7 @@
       text-decoration: none;
 
       &:before {
-        content: '';
+        content: "";
         height: 4px;
         width: 50%;
         position: absolute;

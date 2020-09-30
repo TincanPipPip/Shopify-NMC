@@ -9,9 +9,9 @@
  * Font family
  */
 
-$font-body: 'vartalight';
-$font-bold: 'vartabold';
-$font-regular: 'vartaregular';
+$font-body: "vartalight";
+$font-bold: "vartabold";
+$font-regular: "vartaregular";
 $font-title: $font-bold;
 
 /**
@@ -44,46 +44,51 @@ $line-body: 1.5;
 /**
  * Custom fonts
  */
-$font-dir: '../font';
+$font-dir: "../font";
 
 @font-face {
-  font-family: 'vartaregular';
-  src: url('#{$font-dir}/varta-variablefont_wght-webfont.woff2') format('woff2'), url('#{$font-dir}/varta-variablefont_wght-webfont.woff') format('woff');
+  font-family: "vartaregular";
+  src: url("varta-variablefont_wght-webfont.woff2") format("woff2"),
+    url("varta-variablefont_wght-webfont.woff") format("woff");
   font-weight: normal;
   font-style: normal;
 }
 
 @font-face {
-  font-family: 'vartamedium';
-  src: url('#{$font-dir}/varta-variablefont_wght-webfont.woff2') format('woff2'), url('#{$font-dir}/varta-variablefont_wght-webfont.woff') format('woff');
+  font-family: "vartamedium";
+  src: url("varta-variablefont_wght-webfont.woff2") format("woff2"),
+    url("varta-variablefont_wght-webfont.woff") format("woff");
   font-weight: normal;
   font-style: normal;
 }
 
 @font-face {
-  font-family: 'vartalight';
-  src: url('#{$font-dir}/varta-variablefont_wght-webfont.woff2') format('woff2'), url('#{$font-dir}/varta-variablefont_wght-webfont.woff') format('woff');
+  font-family: "vartalight";
+  src: url("varta-variablefont_wght-webfont.woff2") format("woff2"),
+    url("varta-variablefont_wght-webfont.woff") format("woff");
   font-weight: lighter;
   font-style: normal;
 }
 
 @font-face {
-  font-family: 'vartasemibold';
-  src: url('#{$font-dir}/varta-variablefont_wght-webfont.woff2') format('woff2'), url('#{$font-dir}/varta-variablefont_wght-webfont.woff') format('woff');
+  font-family: "vartasemibold";
+  src: url("varta-variablefont_wght-webfont.woff2") format("woff2"),
+    url("varta-variablefont_wght-webfont.woff") format("woff");
   font-weight: bold;
   font-style: normal;
 }
 
 @font-face {
-  font-family: 'vartabold';
-  src: url('#{$font-dir}/varta-variablefont_wght-webfont.woff2') format('woff2'), url('#{$font-dir}/varta-variablefont_wght-webfont.woff') format('woff');
+  font-family: "vartabold";
+  src: url("varta-variablefont_wght-webfont.woff2") format("woff2"),
+    url("varta-variablefont_wght-webfont.woff") format("woff");
   font-weight: bolder;
   font-style: normal;
 }
 
 // @font-face {
 //   font-family: 'vartalight';
-//   src: url('#{$font-dir}/varta-light.ttf') format('ttf');
+//   src: url('varta-light.ttf') format('ttf');
 //   font-weight: normal;
 //   font-style: normal;
 //   font-display: swap;
@@ -91,7 +96,7 @@ $font-dir: '../font';
 
 // @font-face {
 //   font-family: 'vartaregular';
-//   src: url('../font/Varta-Regular.ttf') format('ttf');
+//   src: url('Varta-Regular.ttf') format('ttf');
 //   font-weight: normal;
 //   font-style: normal;
 //   font-display: swap;
@@ -99,7 +104,7 @@ $font-dir: '../font';
 
 // @font-face {
 //   font-family: 'vartamedium';
-//   src: url('#{$font-dir}/varta-medium.ttf') format('ttf');
+//   src: url('varta-medium.ttf') format('ttf');
 //   font-weight: normal;
 //   font-style: normal;
 //   font-display: swap;
@@ -107,7 +112,7 @@ $font-dir: '../font';
 
 // @font-face {
 //   font-family: 'vartabold';
-//   src: url('#{$font-dir}/varta-bold.ttf') format('ttf');
+//   src: url('varta-bold.ttf') format('ttf');
 //   font-weight: normal;
 //   font-style: normal;
 //   font-display: swap;
@@ -115,7 +120,7 @@ $font-dir: '../font';
 
 // @font-face {
 //   font-family: 'vartasemibold';
-//   src: url('#{$font-dir}/varta-semibold.ttf') format('ttf');
+//   src: url('varta-semibold.ttf') format('ttf');
 //   font-weight: normal;
 //   font-style: normal;
 //   font-display: swap;

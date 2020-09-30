@@ -22,7 +22,7 @@
     color: $c-white;
     padding-top: $bump * 3;
 
-    @include media('<sm') {
+    @include media("<sm") {
       padding-top: $bump * 1.5;
     }
   }
@@ -41,7 +41,7 @@
     display: grid;
     grid-template-columns: 1fr 50px;
 
-    @include media('<sm') {
+    @include media("<sm") {
       padding: 0 0 $bump * 1.5;
     }
 
@@ -50,7 +50,7 @@
       margin: 0;
     }
 
-    input[type='text'] {
+    input[type="text"] {
       width: 100%;
       background-color: $c-white;
       border: 0;
@@ -76,7 +76,7 @@
       @include bg-img(25px);
       padding: 0;
       background-color: $c-white;
-      background-image: url('../icon/search-blue.svg');
+      background-image: url("search-blue.svg");
       height: 50px;
       width: 50px;
       border: 0;
@@ -118,7 +118,7 @@
       border: 1px $c-white solid;
       transition: all 0.2s $easing;
 
-      @include media('<sm') {
+      @include media("<sm") {
         background-color: $c-white;
         border: 1px $c-primary solid;
         color: $c-primary;
@@ -132,6 +132,6 @@
   }
 }
 
-body[data-search='open'] {
+body[data-search="open"] {
   overflow: hidden;
 }

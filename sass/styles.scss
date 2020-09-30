@@ -10,14 +10,14 @@
  */
 @import 'node_modules/modularscale-sass/stylesheets/modularscale';
 @import 'node_modules/include-media/dist/include-media';
+@import 'node_modules/normalize-scss/sass/normalize.scss';
 //  @import '~baguettebox.js/src/baguetteBox';
-//  @import '~normalize.scss/normalize.scss';
-//  @import '~reflex-grid/scss/reflex.scss';
- // @import '~choices.js/public/assets/styles/choices.min.css';
+// @import '~choices.js/public/assets/styles/choices.min.css';
  
  /**
   * Config
   */
+ @import 'config/reflex-grid';
  @import 'config/layout';
  @import 'config/typography';
  @import 'config/vars';
