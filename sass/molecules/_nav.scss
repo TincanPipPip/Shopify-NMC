@@ -7,15 +7,15 @@
 
 .m-main-nav {
   display: flex;
-  justify-content: space-between;
-  align-items:flex-start;
+  justify-content: center;
+  align-items: flex-start;
   flex-grow: 1;
 
-  @include media('<1600px') {
+  @include media("<1600px") {
     padding: 0 0 0 ($bump * 2);
   }
 
-  @include media('<1100px') {
+  @include media("<1100px") {
     padding: 0 0 0 ($bump * 1.25);
   }
 
@@ -35,11 +35,11 @@
         @include underline-animation;
         margin: 0 0 0 ($bump * 2);
 
-        @include media('<1460px') {
+        @include media("<1460px") {
           margin: 0 0 0 ($bump * 1);
         }
 
-        @include media('<sm') {
+        @include media("<sm") {
           color: $c-white;
           &:hover {
             color: $c-off-white;
@@ -51,30 +51,30 @@
     &.o-header__middle__btn__mobile,
     .o-header__middle__btn__mobile {
       display: none;
-      @include media('<md') {
+      @include media("<md") {
         display: none;
-        [data-nav='open'] & {
+        [data-nav="open"] & {
           display: flex;
           align-items: center;
         }
       }
     }
 
-    @include media('<lg') {
+    @include media("<lg") {
       justify-content: center;
     }
 
-    @include media('<sm') {
+    @include media("<sm") {
       flex-direction: column;
     }
   }
 
-  @include media('<md') {
+  @include media("<md") {
     display: none;
     flex-direction: row-reverse;
   }
 
-  @include media('<sm') {
+  @include media("<sm") {
     position: fixed;
     top: 0;
     left: 0;
@@ -89,7 +89,7 @@
     z-index: 10;
   }
 
-  [data-nav='open'] & {
+  [data-nav="open"] & {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -97,6 +97,6 @@
   }
 }
 
-body[data-nav='open'] {
+body[data-nav="open"] {
   overflow: hidden;
 }
