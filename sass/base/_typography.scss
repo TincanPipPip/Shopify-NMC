@@ -9,17 +9,17 @@
  * Config
  */
 @mixin font-body {
-  font-family: 'vartalight', sans-serif;
+  font-family: "vartalight", sans-serif;
 }
 
 @mixin font-bold {
   font-weight: bold;
-  font-family: 'vartabold', sans-serif;
+  font-family: "vartabold", sans-serif;
 }
 
 @mixin font-title {
   font-weight: normal;
-  font-family: 'vartabold', sans-serif;
+  font-family: "vartabold", sans-serif;
 }
 
 /**
@@ -120,14 +120,6 @@ a {
   &:active {
     text-decoration: underline;
   }
-
-  &:focus {
-    outline: 3px dashed currentColor;
-
-    @include focus-visible() {
-      outline: 0;
-    }
-  }
 }
 
 .no-click {
@@ -143,15 +135,6 @@ a {
 /**
  * Buttons
  */
-button {
-  &:focus {
-    outline: 3px dashed currentColor;
-
-    @include focus-visible() {
-      outline: 0;
-    }
-  }
-}
 
 /**
  * Inline

@@ -450,6 +450,22 @@ $color-error-message-list: #651818;
 $color-error-bg: #fff8f8;
 $color-success: #1F873D;
 $color-success-bg: #f8fff9;
+$c-blue: #0077c3;
+$c-dark-blue: #0068aa;
+$c-off-white: #e5f1f9;
+$c-white: #ffffff;
+$c-black: #000000;
+$c-grey: #808080;
+$c-light-grey: #fafafa;
+
+$c-primary: #{$c-blue};
+$c-secondary: #{$c-off-white};
+
+// general purpose variable, should really be renamed but I don't know wtf to call it
+$bump: 30px;
+
+$easing: cubic-bezier(0.3, 0.65, 0.72, 0.63);
+
 
 // Forms
 $color-form-text: #333;
@@ -4877,6 +4893,7 @@ $color-blankstate-background: rgba($color-body-text, 0.1);
 .site-header__search,
 .site-header__account {
   position: relative;
+  color: $c-white;
 }
 
 .site-header__search {
@@ -5576,6 +5593,10 @@ $search-bar-button-hover: rgba($color-text-field-text, 0.6);
 
 .search-form__input-wrapper {
   position: relative;
+  input[type="search"], input[type="text"], input[type="submit"] {
+    background-color: $color-text-field;
+    color: $color-text-field-text;
+  }
 }
 
 .search-form__input {
@@ -5693,7 +5714,7 @@ $search-bar-button-hover: rgba($color-text-field-text, 0.6);
 
 .search-bar {
   z-index: $z-index-search-bar;
-  background-color: $color-body;
+  background-color: $c-primary;
 }
 
 .search-bar__interior {
@@ -5715,7 +5736,7 @@ $search-bar-button-hover: rgba($color-text-field-text, 0.6);
   justify-content: center;
   padding-left: $gutter-site-mobile - $input-padding-left-right-small;
   padding-right: $gutter-site-mobile - $common-search-input-padding;
-  background-color: $color-bg;
+  background-color: $c-primary;
 }
 
 .search-bar__form {
@@ -5760,6 +5781,7 @@ $search-bar-button-hover: rgba($color-text-field-text, 0.6);
 .search-bar__close {
   padding: calc(10em / 16) .75em;
   margin-right: -($gutter-site-mobile - $common-search-input-padding);
+  color: $c-white;
 
   .icon {
     width: 1rem;

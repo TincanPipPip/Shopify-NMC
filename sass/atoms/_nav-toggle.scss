@@ -36,7 +36,7 @@ $translateX: 0;
     right: $bump * 2;
   }
 
-  @include media('<md') {
+  @include media("<md") {
     display: block;
   }
 
@@ -58,19 +58,22 @@ $translateX: 0;
       top: 0;
 
       .m-overlay & {
-        transform: translateY($translateY) translateX($translateX) rotate($rotation);
+        transform: translateY($translateY) translateX($translateX)
+          rotate($rotation);
       }
 
       :hover > & {
         transform: translateY($height-line / 2 * -1);
 
         .m-overlay & {
-          transform: translateY($translateY) translateX($translateX) rotate($rotation);
+          transform: translateY($translateY) translateX($translateX)
+            rotate($rotation);
         }
       }
 
-      [data-nav='open'] & {
-        transform: translateY($translateY) translateX($translateX) rotate($rotation);
+      [data-nav="open"] & {
+        transform: translateY($translateY) translateX($translateX)
+          rotate($rotation);
       }
     }
     &-2 {
@@ -80,7 +83,7 @@ $translateX: 0;
         opacity: 0;
       }
 
-      [data-nav='open'] & {
+      [data-nav="open"] & {
         opacity: 0;
       }
     }
@@ -88,18 +91,21 @@ $translateX: 0;
       top: 100%;
 
       .m-overlay & {
-        transform: translateY($translateY * -1) translateX($translateX) rotate($rotation * -1);
+        transform: translateY($translateY * -1) translateX($translateX)
+          rotate($rotation * -1);
       }
 
       :hover > & {
         transform: translateY($height-line / 2);
         .m-overlay & {
-          transform: translateY($translateY * -1) translateX($translateX) rotate($rotation * -1);
+          transform: translateY($translateY * -1) translateX($translateX)
+            rotate($rotation * -1);
         }
       }
 
-      [data-nav='open'] & {
-        transform: translateY($translateY * -1) translateX($translateX) rotate($rotation * -1);
+      [data-nav="open"] & {
+        transform: translateY($translateY * -1) translateX($translateX)
+          rotate($rotation * -1);
       }
     }
   }
