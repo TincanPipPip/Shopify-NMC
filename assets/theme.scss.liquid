@@ -418,7 +418,7 @@ $color-btn-primary-text: {{ settings.color_button_text }};
 // Hover and focus states
 $color-text-focus: adaptiveColor({{ settings.color_text }}, {{ settings.color_text | color_brightness }});
 $color-overlay-text-focus: adaptiveColor({{ settings.color_image_overlay_text }}, {{ settings.color_image_overlay_text | color_brightness }});
-$c-dark-blue: adaptiveColor({{ settings.color_button }}, {{ settings.color_button | color_brightness }});
+$color-btn-primary-focus: $c-dark-blue;
 $color-btn-social-focus: adaptiveColor({{ settings.color_borders }}, {{ settings.color_borders | color_brightness }});
 $color-small-button-text-border-focus: adaptiveColor({{ settings.color_small_button_text_border }}, {{ settings.color_small_button_text_border | color_brightness }});
 $predictive-search-focus: adaptiveBackgroundColor({{ settings.color_body_bg }}, {{ settings.color_body_bg | color_brightness }});
@@ -1882,22 +1882,20 @@ a[href^="tel"] {
   @include prefix(appearance, none, webkit moz spec);
   display: inline-block;
   width: auto;
-  text-decoration: none;
-  text-align: center;
-  vertical-align: middle;
+  font-weight: bold;
+  font-weight: bold;
+  font-family: "vartabold", sans-serif;
   cursor: pointer;
-  border: 1px solid transparent;
-  border-radius: $border-radius;
-  padding: $input-padding-top-bottom-small $input-padding-left-right-small;
-  background-color: $c-primary;
-  color: $color-btn-primary-text;
-  font-family: $font-stack-header;
-  font-style: $font-style-header;
-  font-weight: $font-weight-header;
+  padding: 18px 24px;
+  color: #fff;
+  line-height: 1;
+  text-decoration: none;
   text-transform: uppercase;
+  text-align: center;
   letter-spacing: 0.08em;
   white-space: normal;
   font-size: $font-size-base - 2;
+  background-color: $c-primary;
 
   @include media-query($medium-up) {
     padding: $input-padding-top-bottom $input-padding-left-right;

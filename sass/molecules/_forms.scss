@@ -27,6 +27,11 @@ select {
   }
 }
 
+input[type="submit"] {
+  background-color: $c-primary;
+  color: $c-white;
+}
+
 input[type="search"],
 input[type="text"],
 input[type="submit"] {
