@@ -350,6 +350,24 @@
   @include prefix(justify-content, $justify, webkit ms spec);
 }
 
+// Helper colors for form error states
+$color-disabled: #f4f4f4;
+$color-disabled-border: #f4f4f4;
+$color-error: #d20000;
+$color-error-message-list: #651818;
+$color-error-bg: #fff8f8;
+$color-success: #1F873D;
+$color-success-bg: #f8fff9;
+$c-blue: #0077c3;
+$c-dark-blue: #0068aa;
+$c-off-white: #e5f1f9;
+$c-white: #ffffff;
+$c-black: #000000;
+$c-grey: #808080;
+$c-light-grey: #fafafa;
+
+$c-primary: #{$c-blue};
+$c-secondary: #{$c-off-white};
 
 /*================ VARIABLES ================*/
 /*============================================================================
@@ -387,7 +405,7 @@ $grid-breakpoint-has-push: ($small, $medium-up);
 $color-text: {{ settings.color_text }};
 $color-text-shadow: rgba(0,0,0,0.4);
 $color-body-text: {{ settings.color_body_text }};
-$color-sale-text: {{ settings.color_sale_text }};
+$color-sale-text: $c-primary;
 $color-small-button-text-border: {{ settings.color_small_button_text_border }};
 $color-text-field: {{ settings.color_text_field }};
 $color-text-field-text: {{ settings.color_text_field_text }};
@@ -400,7 +418,7 @@ $color-btn-primary-text: {{ settings.color_button_text }};
 // Hover and focus states
 $color-text-focus: adaptiveColor({{ settings.color_text }}, {{ settings.color_text | color_brightness }});
 $color-overlay-text-focus: adaptiveColor({{ settings.color_image_overlay_text }}, {{ settings.color_image_overlay_text | color_brightness }});
-$color-btn-primary-focus: adaptiveColor({{ settings.color_button }}, {{ settings.color_button | color_brightness }});
+$c-dark-blue: adaptiveColor({{ settings.color_button }}, {{ settings.color_button | color_brightness }});
 $color-btn-social-focus: adaptiveColor({{ settings.color_borders }}, {{ settings.color_borders | color_brightness }});
 $color-small-button-text-border-focus: adaptiveColor({{ settings.color_small_button_text_border }}, {{ settings.color_small_button_text_border | color_brightness }});
 $predictive-search-focus: adaptiveBackgroundColor({{ settings.color_body_bg }}, {{ settings.color_body_bg | color_brightness }});
@@ -441,25 +459,6 @@ $hover-overlay-opacity: {{ image_overlay_opacity_hover | at_most: 1 }};
 // Border colors
 $color-border: {{ settings.color_borders }};
 $color-border-form: {{ settings.color_text_field_border }};
-
-// Helper colors for form error states
-$color-disabled: #f4f4f4;
-$color-disabled-border: #f4f4f4;
-$color-error: #d20000;
-$color-error-message-list: #651818;
-$color-error-bg: #fff8f8;
-$color-success: #1F873D;
-$color-success-bg: #f8fff9;
-$c-blue: #0077c3;
-$c-dark-blue: #0068aa;
-$c-off-white: #e5f1f9;
-$c-white: #ffffff;
-$c-black: #000000;
-$c-grey: #808080;
-$c-light-grey: #fafafa;
-
-$c-primary: #{$c-blue};
-$c-secondary: #{$c-off-white};
 
 // general purpose variable, should really be renamed but I don't know wtf to call it
 $bump: 30px;
@@ -1381,7 +1380,7 @@ blockquote {
   margin: 0;
 
   .rte & {
-    border-color: $color-border;
+    border-color: $c-primary;
     border-width: 1px 0;
     border-style: solid;
     padding: 30px 0;
@@ -1890,7 +1889,7 @@ a[href^="tel"] {
   border: 1px solid transparent;
   border-radius: $border-radius;
   padding: $input-padding-top-bottom-small $input-padding-left-right-small;
-  background-color: $color-btn-primary;
+  background-color: $c-primary;
   color: $color-btn-primary-text;
   font-family: $font-stack-header;
   font-style: $font-style-header;
@@ -1907,7 +1906,7 @@ a[href^="tel"] {
   &:not([disabled]):hover,
   &:focus {
     color: $color-btn-primary-text;
-    background-color: $color-btn-primary-focus;
+    background-color: $c-dark-blue;
   }
 
   .icon-arrow-right,
@@ -1923,28 +1922,28 @@ a[href^="tel"] {
 }
 
 .btn--secondary {
-  background-color: transparent;
-  color: $color-btn-primary;
-  border-color: $color-btn-primary;
+  background-color: $c-white;
+  border: 1px $c-primary solid;
+  color: $c-primary;
 
   &:not([disabled]):hover,
   &:focus {
-    background-color: transparent;
-    color: $color-btn-primary-focus;
-    border-color: $color-btn-primary-focus;
+    background-color: $c-primary;
+    border: 1px $c-white solid;
+    color: $c-white;
   }
 }
 
 .btn--secondary-accent {
-  background-color: $color-body;
-  color: $color-btn-primary;
-  border-color: $color-btn-primary;
+  background-color: $c-white;
+  border: 1px $c-primary solid;
+  color: $c-primary;
 
   &:not([disabled]):hover,
   &:focus {
-    background-color: $color-body;
-    color: $color-btn-primary-focus;
-    border-color: $color-btn-primary-focus;
+    background-color: $c-primary;
+    border: 1px $c-white solid;
+    color: $c-white;
   }
 }
 
@@ -2020,13 +2019,13 @@ a[href^="tel"] {
 }
 
 .text-link--accent {
-  color: $color-btn-primary;
+  color: $c-primary;
   border-bottom: 1px solid currentColor;
   padding-bottom: 1px;
 
   &:not([disabled]):hover,
   &:focus {
-    color: $color-btn-primary-focus;
+    color: $c-dark-blue;
   }
 }
 
@@ -2067,7 +2066,7 @@ th {
 th,
 td {
   text-align: left;
-  border: 1px solid $color-border;
+  border: 1px solid $c-primary;
   padding: 10px 14px;
 }
 
@@ -2121,7 +2120,7 @@ tfoot th {
       top: 0;
       left: $gutter-site / 2;
       right: $gutter-site / 2;
-      border-bottom: 1px solid $color-border;
+      border-bottom: 1px solid $c-primary;
     }
   }
 }
@@ -2586,7 +2585,7 @@ textarea {
   }
 
   &.site-nav--active-dropdown {
-    border: 1px solid $color-border;
+    border: 1px solid $c-primary;
     border-bottom: 1px solid transparent;
     z-index: 2;
   }
@@ -2638,7 +2637,7 @@ textarea {
   margin: 0;
   z-index: $z-index-dropdown;
   text-align: left;
-  border: 1px solid $color-border;
+  border: 1px solid $c-primary;
   background: $color-bg;
   left: -1px;
   top: 41px;
@@ -2723,7 +2722,7 @@ textarea {
 hr {
   margin: $gutter-site 0;
   border: 0;
-  border-bottom: 1px solid $color-border;
+  border-bottom: 1px solid $c-primary;
 }
 
 .hr--small {
@@ -2736,11 +2735,11 @@ hr {
 }
 
 .border-bottom {
-  border-bottom: 1px solid $color-border;
+  border-bottom: 1px solid $c-primary;
 }
 
 .border-top {
-  border-top: 1px solid $color-border;
+  border-top: 1px solid $c-primary;
 }
 
 .empty-page-content {
@@ -2964,7 +2963,7 @@ hr {
   }
 
   @include media-query($medium-up) {
-    border-bottom: 1px solid $color-border;
+    border-bottom: 1px solid $c-primary;
     padding-bottom: $gutter-site-mobile;
 
     &:last-child {
@@ -3752,7 +3751,7 @@ $color-blankstate-background: rgba($color-body-text, 0.1);
     @extend .product-form__cart-submit;
 
     &:hover {
-      background-color: $color-btn-primary-focus !important;
+      background-color: $c-dark-blue !important;
     }
   }
   .shopify-payment-button__button--branded {
@@ -4359,7 +4358,7 @@ $color-blankstate-background: rgba($color-body-text, 0.1);
 }
 
 .cart__row {
-  border-bottom: 1px solid $color-border;
+  border-bottom: 1px solid $c-primary;
 
   p {
     margin-bottom: 0;
@@ -4589,7 +4588,7 @@ $color-blankstate-background: rgba($color-body-text, 0.1);
 }
 
 .order-table {
-  border: 1px solid $color-border;
+  border: 1px solid $c-primary;
 
   a {
     border-bottom: 1px solid currentColor;
@@ -4607,7 +4606,7 @@ $color-blankstate-background: rgba($color-body-text, 0.1);
   }
 
   tbody tr + tr {
-    border-top: 1px solid $color-border;
+    border-top: 1px solid $c-primary;
   }
 
   thead {
@@ -4796,7 +4795,7 @@ $color-blankstate-background: rgba($color-body-text, 0.1);
   background-color: $color-body;
 
   @include media-query($small) {
-    border-bottom: 1px solid $color-border;
+    border-bottom: 1px solid $c-primary;
   }
 
   @include media-query($medium-up) {
@@ -4940,7 +4939,7 @@ $color-blankstate-background: rgba($color-body-text, 0.1);
   right: 0.4rem;
   top: 0.2rem;
   font-weight: bold;
-  background-color: $color-btn-primary;
+  background-color: $c-primary;
   color: $color-btn-primary-text;
   border-radius: 50%;
   min-width: 1em;
@@ -5315,7 +5314,7 @@ $color-blankstate-background: rgba($color-body-text, 0.1);
   width: 100%;
   background-color: $color-body;
   z-index: 9999;
-  border: 1px solid $color-border;
+  border: 1px solid $c-primary;
   transform: translateY(0%);
   transition: $transition-drawer;
 
@@ -5338,7 +5337,7 @@ $color-blankstate-background: rgba($color-body-text, 0.1);
   display: flex;
   flex-direction: row;
   align-items: center;
-  border-bottom: 1px solid $color-border;
+  border-bottom: 1px solid $c-primary;
 }
 
 .cart-popup__heading {
@@ -5516,6 +5515,9 @@ $color-blankstate-background: rgba($color-body-text, 0.1);
 
 .social-sharing {
   display: flex;
+  li {
+    list-style: none;
+  }
   .template-password & {
     justify-content: center;
   }
@@ -5523,7 +5525,7 @@ $color-blankstate-background: rgba($color-body-text, 0.1);
 
 .btn--share {
   background-color: transparent;
-  border-color: $color-border;
+  border-color: $c-primary;
   color: $color-text;
   margin-right: 5px;
   margin-bottom: 10px;
@@ -5689,7 +5691,7 @@ $search-bar-button-hover: rgba($color-text-field-text, 0.6);
   align-items: center;
   justify-content: center;
   width: $connected-submit-size;
-  background-color: $color-btn-primary;
+  background-color: $c-primary;
   border-radius: 0 $border-radius $border-radius 0;
   transition: background-color $transition-duration-fast ease-in-out;
 
@@ -5699,7 +5701,7 @@ $search-bar-button-hover: rgba($color-text-field-text, 0.6);
   }
 
   &:active {
-    background-color: $color-btn-primary;
+    background-color: $c-primary;
   }
 
   .icon-search {
@@ -5917,7 +5919,7 @@ $predictive-search-hover-and-select-background-color: $predictive-search-focus;
     top: 0;
     left: 0;
     height: 0;
-    background-color: $color-border;
+    background-color: $c-primary;
   }
 
   &::after {
@@ -5927,7 +5929,7 @@ $predictive-search-hover-and-select-background-color: $predictive-search-focus;
     bottom: -$input-border-width;
     left: $predictive-search-list-padding;
     height: $input-border-width;
-    background-color: $color-border;
+    background-color: $c-primary;
   }
 }
 
@@ -6073,7 +6075,7 @@ $predictive-search-hover-and-select-background-color: $predictive-search-focus;
 
 // View all
 .predictive-search-view-all, .predictive-search-loading {
-  border-top: 1px solid $color-border;
+  border-top: 1px solid $c-primary;
 
   @include media-query($medium-up) {
     .predictive-search__list &:first-child {
@@ -6159,7 +6161,7 @@ $nav-button-padding: 15px;
 }
 
 .mobile-nav__return {
-  border-right: 1px solid $color-border;
+  border-right: 1px solid $c-primary;
 }
 
 .mobile-nav__return-btn {
@@ -6248,7 +6250,7 @@ $nav-button-padding: 15px;
     bottom: 0;
     left: 0;
     right: 0;
-    border-bottom: 1px solid $color-border;
+    border-bottom: 1px solid $c-primary;
   }
 
   &.js-menu--is-open {
@@ -6616,7 +6618,7 @@ $transition-controls-slideshow: color 0.2s $ease-transition,
   max-width: 100%;
   display: inline-block;
   word-wrap: break-word;
-  background-color: $color-btn-primary;
+  background-color: $c-primary;
   color: $color-btn-primary-text;
   min-height: 3.125rem;
   line-height: 2.2;
@@ -6989,8 +6991,8 @@ $toolbar-height: 55px;
 $toolbar-height-small: 46px;
 
 .filters-toolbar-wrapper {
-  border-bottom: 1px solid $color-border;
-  border-top: 1px solid $color-border;
+  border-bottom: 1px solid $c-primary;
+  border-top: 1px solid $c-primary;
   margin-bottom: $gutter-site-mobile;
 
   @include media-query($medium-up) {
@@ -7030,7 +7032,7 @@ $toolbar-height-small: 46px;
       text-align: left;
 
       &:before {
-        background-color: $color-border;
+        background-color: $c-primary;
         content: "";
         height: 1px;
         left: 0;

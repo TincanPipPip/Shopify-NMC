@@ -151,6 +151,20 @@
   }
 }
 
+@mixin no-arrow {
+  &:after {
+    background-image: none !important;
+    display: none !important;
+  }
+
+  &:hover {
+    &:after {
+      background-image: none !important;
+      display: none !important;
+    }
+  }
+}
+
 @mixin btn-blue {
   display: inline-block;
   background: $c-off-white;
@@ -174,6 +188,10 @@
 
 .a-btn {
   @include btn;
+
+  &--no-arrow {
+    @include no-arrow;
+  }
 
   &--blue {
     @include btn-blue;

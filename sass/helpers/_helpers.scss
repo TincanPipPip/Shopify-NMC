@@ -6,6 +6,10 @@
   @include speech-marks;
 }
 
+.flex {
+  display: flex;
+}
+
 .flex-column {
   display: flex;
   flex-direction: column;
@@ -26,20 +30,20 @@
 
 .desktop-only {
   display: block;
-  @include media('<md') {
+  @include media("<md") {
     display: none;
   }
 }
 
 .mobile-only {
   display: none;
-  @include media('<md') {
+  @include media("<md") {
     display: inherit;
   }
 }
 
 .mobile-text-center {
-  @include media('<md') {
+  @include media("<md") {
     text-align: center;
   }
 }
@@ -51,7 +55,7 @@
 .text-align-switch {
   text-align: right;
 
-  @include media('<lg') {
+  @include media("<lg") {
     text-align: left;
   }
 }
@@ -65,7 +69,7 @@
 }
 
 .no-padding-mobile {
-  @include media('<sm') {
+  @include media("<sm") {
     padding: 0;
   }
 }
@@ -76,7 +80,7 @@
 
 .right-desktop-spacing {
   margin: 0 ($bump/3) 0 0;
-  @include media('<sm') {
+  @include media("<sm") {
     padding: 0;
   }
 }
@@ -87,7 +91,7 @@
   padding-bottom: 7.5%;
 
   &:after {
-    content: '';
+    content: "";
     background: #f2f2f2;
     position: absolute;
     top: 0;
@@ -97,7 +101,7 @@
     z-index: -1;
     clip-path: polygon(0 0, 100% 5%, 100% 100%, 0% 95%);
 
-    @include media('<sm') {
+    @include media("<sm") {
       clip-path: none;
     }
   }

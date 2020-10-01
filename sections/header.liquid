@@ -1,5 +1,5 @@
 {% if section.settings.message %}
-  <style>
+    <style>
     {% if section.settings.logo != blank %}
       .site-header__logo-image {
         max-width: {{ section.settings.logo_max_width | escape }}px;
@@ -17,9 +17,9 @@
 {% include 'search-drawer' %}
 
 <div data-section-id="{{ section.id }}" data-section-type="header-section" data-header-section>
-  {% if section.settings.message %}
-    {% if section.settings.home_page_only == false or request.page_type == 'index' %}
-      <style>
+    {% if section.settings.message %}
+        {% if section.settings.home_page_only == false or request.page_type == 'index' %}
+            <style>
         .announcement-bar {
           background-color: {{ section.settings.color_bg }};
         }
@@ -41,132 +41,149 @@
         }
       </style>
 
-      <div class="announcement-bar" role="region" aria-label="{{ 'sections.header.announcement_bar_label' | t }}">
-        {%- unless section.settings.message_link == blank -%}
-          <a href="{{ section.settings.message_link }}" class="announcement-bar__link">
-        {%- endunless -%}
-            <p class="announcement-bar__message">{{ section.settings.message_text | escape }}</p>
-        {%- unless section.settings.message_link == blank -%}
-          </a>
-        {%- endunless -%}
-      </div>
+            <div class="announcement-bar" role="region" aria-label="{{ 'sections.header.announcement_bar_label' | t }}">
+                {%- unless section.settings.message_link == blank -%}
+                    <a href="{{ section.settings.message_link }}" class="announcement-bar__link">
+                    {%- endunless -%}
+                    <p class="announcement-bar__message">{{ section.settings.message_text | escape }}</p>
+                    {%- unless section.settings.message_link == blank -%}
+                    </a>
+                {%- endunless -%}
+            </div>
 
+        {% endif %}
     {% endif %}
-  {% endif %}
-  
-  <header id="js-header" class="o-header" role="banner">
-    <div class="o-header__inner">
-      <div class="o-header__logo__wrapper  o-header__col">
-        <a href="/" title="NMC" rel="home" class="o-header__logo" aria-label="Site logo - link to homepage">
-          <svg height="49" viewBox="0 0 218 49" xmlns="http://www.w3.org/2000/svg"><path d="M47.707.904L0 48.61h24.086l23.207-23.206v23.5L95 1.197H70.914L47.707 24.403V.903zm58.187 0L58 48.61h24.18l23.298-23.206v23.5l23.592-23.5V48.61H146V1.197h-16.809l-23.297 23.206V.903zm47.106 0v48h65L201.518 31.83h-32.035V17.976h16.363L169.364.904z" fill="#FFF" fill-rule="evenodd"></path></svg>
-        </a>
-      </div>
-  
-      <div class="o-header__middle">
-        <div class="grid">
-          <div class="col-sm-12">
-            <div class="o-header__row">
-              <a class="a-btn  o-header__middle__btn" href="/donate">Donate</a>
-              <a class="a-btn  o-header__middle__btn" href="/about-us">About Us</a>
-              <a class="a-btn  o-header__search  js-search-btn    js-drawer-open-top"  id="js-searchToggle"  href="#block-searchform" title="Search" aria-label="Search"><span>Search</span><svg width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M24 21.646l-6.255-6.205a9.63 9.63 0 001.872-5.711c0-5.365-4.4-9.73-9.809-9.73C4.4 0 0 4.365 0 9.73c0 5.366 4.4 9.73 9.808 9.73a9.81 9.81 0 005.531-1.698L21.627 24 24 21.646zM2.877 9.73c0-3.792 3.11-6.877 6.932-6.877 3.822 0 6.932 3.085 6.932 6.877s-3.11 6.877-6.932 6.877c-3.823 0-6.932-3.085-6.932-6.877z" fill="#FFF"></path></svg></a>
-              <a href="{{ routes.cart_url }}" class="site-header__icon site-header__cart">
-                {% include 'icon-cart' %}
-                <span class="icon__fallback-text">{{ 'layout.cart.title' | t }}</span>
-                <div class="site-header__cart-count{% if cart.item_count == 0 %} hide{% endif %}" data-cart-count-bubble id="CartCount">
-                    <span data-cart-count>{{ cart.item_count }}</span>
-                    <span class="icon__fallback-text medium-up--hide">{{ 'layout.cart.items_count' | t: count: cart.item_count }}</span>
+
+    <header class="o-header" id="js-header" role="banner">
+        <div class="o-header__inner">
+            <div class="o-header__logo__wrapper  o-header__col">
+                <a aria-label="Site logo - link to homepage" class="o-header__logo" href="/" rel="home" title="NMC">
+                    <svg height="49" viewbox="0 0 218 49" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M47.707.904L0 48.61h24.086l23.207-23.206v23.5L95 1.197H70.914L47.707 24.403V.903zm58.187 0L58 48.61h24.18l23.298-23.206v23.5l23.592-23.5V48.61H146V1.197h-16.809l-23.297 23.206V.903zm47.106 0v48h65L201.518 31.83h-32.035V17.976h16.363L169.364.904z" fill-rule="evenodd" fill="#FFF"></path>
+                    </svg>
+                </a>
+            </div>
+
+            <div class="o-header__middle">
+                <div class="grid">
+                    <div class="col-sm-12">
+                        <div class="o-header__row">
+                            <a class="a-btn  o-header__middle__btn" href="/donate">Donate</a>
+                            <a class="a-btn  o-header__middle__btn" href="/about-us">About Us</a>
+                            <a aria-label="Search" class="a-btn  o-header__search  js-search-btn    js-drawer-open-top" href="#block-searchform" id="js-searchToggle" title="Search">
+                                <span>Search</span>
+                                <svg height="24" viewbox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M24 21.646l-6.255-6.205a9.63 9.63 0 001.872-5.711c0-5.365-4.4-9.73-9.809-9.73C4.4 0 0 4.365 0 9.73c0 5.366 4.4 9.73 9.808 9.73a9.81 9.81 0 005.531-1.698L21.627 24 24 21.646zM2.877 9.73c0-3.792 3.11-6.877 6.932-6.877 3.822 0 6.932 3.085 6.932 6.877s-3.11 6.877-6.932 6.877c-3.823 0-6.932-3.085-6.932-6.877z" fill="#FFF"></path>
+                                </svg>
+                            </a>
+                            <a href="{{ routes.cart_url }}" class="site-header__icon site-header__cart">
+                                {% include 'icon-cart' %}
+                                <span class="icon__fallback-text">{{ 'layout.cart.title' | t }}</span>
+                                <div class="site-header__cart-count{% if cart.item_count == 0 %} hide{% endif %}" data-cart-count-bubble id="CartCount">
+                                    <span data-cart-count>{{ cart.item_count }}</span>
+                                    <span class="icon__fallback-text medium-up--hide">{{ 'layout.cart.items_count' | t: count: cart.item_count }}</span>
+                                </div>
+                            </a>
+                            <span class="a-btn  o-header__menu">Menu</span>
+
+                            <button aria-label="Toggle nav" class="a-nav-toggle  o-header__cta" id="js-navToggle" title="Toggle Nav">
+                                <span class="a-nav-toggle__line a-nav-toggle__line-1"></span>
+                                <span class="a-nav-toggle__line a-nav-toggle__line-2"></span>
+                                <span class="a-nav-toggle__line a-nav-toggle__line-3"></span>
+                            </button>
+                        </div>
+                    </div>
                 </div>
-              </a>
-              <span class="a-btn  o-header__menu">Menu</span>
-  
-              <button class="a-nav-toggle  o-header__cta"  id="js-navToggle"  title="Toggle Nav" aria-label="Toggle nav">
+            </div>
+
+            <div class="o-header__bottom">
+                <div class="col-sm-12  o-header__grid">
+                    <div class="o-header__spacer"></div>
+                    <div class="o-header__row  o-header__grid__items">
+
+                        <nav class="m-main-nav" role="navigation">
+                            <ul class="menu o-header__middle__btn__mobile">
+                                <li class="menu-item">
+                                    <a class="menu-item menu-item__link  o-header__middle__btn__mobile" href="/donate">Donate</a>
+                                </li>
+                                <li class="menu-item">
+                                    <a class="menu-item menu-item__link  o-header__middle__btn__mobile" href="/about-us">About Us</a>
+                                </li>
+                            </ul>
+                            {% include 'site-nav', linklist: section.settings.main_linklist %}
+                        </nav>
+                        <div class="o-header__cta__wrapper">
+                            <div class="a-btn  a-btn__secondary  a-btn__secondary--alt  o-header__cta  o-header__top__cta__wrapper  o-header__top__hide">
+                                <a class="o-header__top__cta" href="https://nmc-recordings.myshopify.com/collections/explore-labels" rel="nofollow noopener">Explore Labels</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="m-search m-overlay">
+            <button aria-label="Toggle nav" class="a-nav-toggle  o-header__cta  js-search-btn" title="Toggle Nav">
                 <span class="a-nav-toggle__line a-nav-toggle__line-1"></span>
                 <span class="a-nav-toggle__line a-nav-toggle__line-2"></span>
                 <span class="a-nav-toggle__line a-nav-toggle__line-3"></span>
-              </button>
-            </div>
-          </div>
-        </div>
-      </div>
-  
-      <div class="o-header__bottom">
-        <div class="col-sm-12  o-header__grid">
-          <div class="o-header__spacer"></div>
-          <div class="o-header__row  o-header__grid__items">
-              
-            <nav class="m-main-nav" role="navigation">
-              <ul class="menu o-header__middle__btn__mobile">
-                <li class="menu-item">
-                  <a class="menu-item menu-item__link  o-header__middle__btn__mobile" href="/donate">Donate</a>
-                </li>
-                <li class="menu-item">
-                  <a class="menu-item menu-item__link  o-header__middle__btn__mobile" href="/about-us">About Us</a>
-                </li>
-              </ul>
-              {% include 'site-nav', linklist: section.settings.main_linklist %}
-            </nav>
-            <div class="o-header__cta__wrapper">
-              <div class="a-btn  a-btn__secondary  a-btn__secondary--alt  o-header__cta  o-header__top__cta__wrapper  o-header__top__hide">
-                  <a href="https://nmc-recordings.myshopify.com/collections/explore-labels" class="o-header__top__cta" rel="nofollow noopener">Explore Labels</a>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  
-    <div class="m-search m-overlay">
-      <button class="a-nav-toggle  o-header__cta  js-search-btn" title="Toggle Nav" aria-label="Toggle nav">
-        <span class="a-nav-toggle__line a-nav-toggle__line-1"></span>
-        <span class="a-nav-toggle__line a-nav-toggle__line-2"></span>
-        <span class="a-nav-toggle__line a-nav-toggle__line-3"></span>
-      </button>
-      <section>
-        <div class="grid justify-center">
-          <div class="col-sm-8">
-            <div class="m-search__inner">
-              
-  <div class="m-block m-block--views m-block--views-exposed-filter-blocksearch-search m-block__ m-">
-          <form class="views-exposed-form bef-exposed-form contextual-region" data-drupal-selector="views-exposed-form-search-search" action="/search" method="get" id="views-exposed-form-search-search" accept-charset="UTF-8">
-    
-  <div class="ct__listing__form">
-  <div class="js-form-item form-item js-form-type-textfield form-type-textfield js-form-item-for form-item-for form-no-label">
-          <input placeholder="Search site" data-drupal-selector="edit-for" type="text" id="edit-for" name="for" value="" size="30" maxlength="128" class="form-text">
-  
-          </div>
-  <div data-drupal-selector="edit-actions" class="form-actions js-form-wrapper form-wrapper" id="edit-actions"><button data-twig-suggestion="search_results_submit" class="a-btn button js-form-submit form-submit" value="Search" data-drupal-selector="edit-submit-search" type="submit" id="edit-submit-search">
-    Search
-  </button>
-  </div>
-  
-  </div>
-  </form>
-  
-    </div>
-  
-              
-  <div class="m-block m-block--block-content m-block--block-contentc969cb25-b628-4670-94b7-5e2ea1f529f1 m-block__search m-search">
-      
-        <h5>We suggest</h5>
-      <div class="m-search__suggestions">
-            <a href="/search?for=nmc1" class="a-btn  a-btn__secondary" title=""><span>NMC1</span></a>
-      <a href="/search?for=nmc2" class="a-btn  a-btn__secondary" title=""><span>NMC2</span></a>
-      <a href="/search?for=test" class="a-btn  a-btn__secondary" title=""><span>Test</span></a>
-      <a href="/search?for=watkins" class="a-btn  a-btn__secondary" title=""><span>Watkins</span></a>
-  
-      </div>
-    
-  </div>
-  
-            </div>
-          </div>
-        </div>
-      </section>
-    </div>
-  
-  
-  </header>
+            </button>
+            <section>
+                <div class="grid justify-center">
+                    <div class="col-sm-8">
+                        <div class="m-search__inner">
 
+                            <div class="m-block m-block--views m-block--views-exposed-filter-blocksearch-search m-block__ m-">
+                                <form accept-charset="UTF-8" action="/search" class="views-exposed-form bef-exposed-form contextual-region" data-drupal-selector="views-exposed-form-search-search" id="views-exposed-form-search-search" method="get">
+
+                                    <div class="ct__listing__form">
+                                        <div class="js-form-item form-item js-form-type-textfield form-type-textfield js-form-item-for form-item-for form-no-label">
+                                            <input class="form-text" data-drupal-selector="edit-for" id="edit-for" maxlength="128" name="for" placeholder="Search site" size="30" type="text" value="">
+
+                                        </div>
+                                        <div class="form-actions js-form-wrapper form-wrapper" data-drupal-selector="edit-actions" id="edit-actions">
+                                            <button class="a-btn button js-form-submit form-submit" data-drupal-selector="edit-submit-search" data-twig-suggestion="search_results_submit" id="edit-submit-search" type="submit" value="Search">
+                                                Search
+                                            </button>
+                                        </div>
+
+                                    </div>
+                                </form>
+
+                            </div>
+
+
+                            <div class="m-block m-block--block-content m-block--block-contentc969cb25-b628-4670-94b7-5e2ea1f529f1 m-block__search m-search">
+
+                                <h5>We suggest</h5>
+                                <div class="m-search__suggestions">
+                                    <a class="a-btn  a-btn__secondary" href="/search?for=nmc1" title="">
+                                        <span>NMC1</span>
+                                    </a>
+                                    <a class="a-btn  a-btn__secondary" href="/search?for=nmc2" title="">
+                                        <span>NMC2</span>
+                                    </a>
+                                    <a class="a-btn  a-btn__secondary" href="/search?for=test" title="">
+                                        <span>Test</span>
+                                    </a>
+                                    <a class="a-btn  a-btn__secondary" href="/search?for=watkins" title="">
+                                        <span>Watkins</span>
+                                    </a>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+
+    </header>
+
+</div>
 
 
 <script type="application/ld+json">
@@ -184,8 +201,8 @@
 </script>
 
 {% if request.page_type == 'index' %}
-  {% assign potential_action_target = shop.url | append: routes.search_url | append: "?q={search_term_string}" %}
-  <script type="application/ld+json">
+    {% assign potential_action_target = shop.url | append: routes.search_url | append: "?q={search_term_string}" %}
+    <script type="application/ld+json">
 
 
 [36mLine: 1[0m
