@@ -27,4 +27,5 @@ body {
   display: flex;
   flex-direction: column;
   @include ms-respond(font-size, 0);
+  width: 100%;
 }

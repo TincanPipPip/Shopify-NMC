@@ -23,10 +23,6 @@
     padding-top: 0;
     padding-bottom: 0;
 
-    [data-nav='open'] & {
-      display: none;
-    }
-
     span {
       transform: none;
     }
@@ -37,7 +33,7 @@
       fill: $c-white;
       margin-left: $bump/2;
 
-      @include media('<md') {
+      @include media("<md") {
         margin-left: $bump/3;
       }
     }
@@ -51,7 +47,7 @@
       flex-direction: row;
     }
 
-    @include media('<lg') {
+    @include media("<lg") {
       margin: 0 10px;
     }
   }
@@ -65,7 +61,7 @@
       justify-content: space-between;
       width: 100%;
 
-      @include media('<md') {
+      @include media("<md") {
         flex-direction: column-reverse;
         align-items: flex-end;
       }
@@ -82,7 +78,7 @@
       transform: skew(15deg);
 
       &__wrapper {
-        @include media('<sm') {
+        @include media("<sm") {
           width: 100%;
           border: none;
           margin: 0;
@@ -101,7 +97,7 @@
     }
 
     &__hide {
-      @include media('<sm') {
+      @include media("<sm") {
         display: none;
       }
     }
@@ -111,7 +107,7 @@
       width: 100%;
     }
 
-    @include media('<sm') {
+    @include media("<sm") {
       display: block;
       background: white;
       z-index: 11;
@@ -127,19 +123,13 @@
 
   &__middle {
     background-color: $c-dark-blue;
-
-    [data-nav='open'] & {
-      @include media('<sm') {
-        z-index: 11;
-        position: relative;
-      }
-    }
+    width: 100%;
 
     &__btn {
       padding-top: 0;
       padding-bottom: 0;
 
-      @include media('<md') {
+      @include media("<md") {
         display: none;
       }
 
@@ -149,9 +139,14 @@
     }
 
     &__shop {
-      @include media('<md') {
+      @include media("<md") {
         display: none;
       }
+    }
+
+    &__row {
+      flex-flow: row wrap;
+      margin: 0 0 0 ($bump * 5);
     }
   }
 
@@ -160,11 +155,11 @@
     padding-top: 0;
     padding-bottom: 0;
 
-    @include media('<md') {
+    @include media("<md") {
       display: block;
     }
 
-    @include media('<sm') {
+    @include media("<sm") {
       padding-right: 0;
       padding-left: 0;
     }
@@ -175,16 +170,12 @@
     background-color: $c-white;
     box-shadow: 0 2px 19px -4px rgba(0, 0, 0, 0.1);
 
-    @include media('<sm') {
+    @include media("<sm") {
       display: none;
-
-      [data-nav='open'] & {
-        display: block;
-      }
     }
 
     &__shop {
-      @include media('<sm') {
+      @include media("<sm") {
         display: none;
       }
     }
@@ -194,11 +185,11 @@
     width: 100%;
     max-width: ($bump * 8);
 
-    @include media('<md') {
+    @include media("<md") {
       max-width: ($bump * 9.5);
     }
 
-    @include media('<sm') {
+    @include media("<sm") {
       display: none;
     }
   }
@@ -208,7 +199,11 @@
     padding: ($bump * 2) ($bump * 2) ($bump * 2) $bump;
     transition: all 0.2s $easing;
 
-    @include media('<sm') {
+    @include media("<md") {
+      padding: ($bump * 2) ($bump * 2) ($bump * 1.5) $bump;
+    }
+
+    @include media("<sm") {
       padding: ($bump * 0.75) 0 ($bump * 0.75) ($bump * 0.3725);
     }
 
@@ -216,7 +211,7 @@
       width: 218px;
       height: 49px;
 
-      @include media('<sm') {
+      @include media("<sm") {
         width: 105px;
         height: 24px;
       }
@@ -230,7 +225,7 @@
       width: 100%;
       z-index: 10;
 
-      @include media('<sm') {
+      @include media("<sm") {
         max-width: 168px;
       }
     }

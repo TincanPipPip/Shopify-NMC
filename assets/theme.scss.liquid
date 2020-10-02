@@ -2650,6 +2650,7 @@ textarea {
 
   li {
     display: block;
+    margin: 10px 0 0;
   }
 }
 
@@ -4788,22 +4789,7 @@ $color-blankstate-background: rgba($color-body-text, 0.1);
 
 
 /*================ MODULES ================*/
-.site-header {
-  position: relative;
-  background-color: $color-body;
 
-  @include media-query($small) {
-    border-bottom: 1px solid $c-primary;
-  }
-
-  @include media-query($medium-up) {
-    padding: 0 $gutter-site;
-
-    &.logo--center {
-      padding-top: $grid-gutter;
-    }
-  }
-}
 
 ///
 /// Logo
@@ -6109,6 +6095,11 @@ $nav-button-padding: 15px;
   display: block;
   @include transform(translate3d(0, 0, 0));
   transition: $transition-drawer;
+  margin: 0;
+
+  ul {
+    margin: 0;
+  }
 
   .sub-nav--is-open & {
     @include transform(translate3d(-100%, 0, 0));
@@ -6260,6 +6251,10 @@ $nav-button-padding: 15px;
   .icon-close {
     display: none;
   }
+}
+
+.icon.icon-hamburger {
+  vertical-align: baseline;
 }
 
 .mobile-nav--close {
