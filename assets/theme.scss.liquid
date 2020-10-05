@@ -4153,6 +4153,15 @@ $color-blankstate-background: rgba($color-body-text, 0.1);
 
 .blog-list-view .pagination {
   padding-top: 0;
+  li {
+    list-style: none;
+  }
+}
+
+.blog-list-view {
+  li {
+    list-style: none;
+  }
 }
 
 .blog-filter {
@@ -4900,7 +4909,7 @@ $color-blankstate-background: rgba($color-body-text, 0.1);
 .site-header__account,
 .site-header__cart {
   @include media-query($medium-up) {
-    padding: 10px 11px;
+    padding: 0 11px;
   }
 }
 

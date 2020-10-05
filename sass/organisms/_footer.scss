@@ -10,7 +10,7 @@
   .ct__homepage & {
     margin: -200px 0 0;
 
-    @include media('<sm') {
+    @include media("<sm") {
       margin: -100px 0 0;
     }
   }
@@ -20,20 +20,20 @@
   .ct__listing-page & {
     margin: -200px 0 0;
 
-    @include media('<lg') {
+    @include media("<lg") {
       margin: -120px 0 0;
     }
 
-    @include media('<sm') {
+    @include media("<sm") {
       margin: -80px 0 0;
     }
   }
 
-  [data-search='true'] & {
+  [data-search="true"] & {
     opacity: 0.2;
   }
 
-  [data-search='false'] & {
+  [data-search="false"] & {
     opacity: 1;
   }
 
@@ -51,7 +51,7 @@
     align-items: flex-start;
     flex-wrap: wrap;
 
-    @include media('<sm') {
+    @include media("<sm") {
       flex-direction: column;
     }
 
@@ -59,11 +59,11 @@
       padding: $bump * 3 0 $bump * 2;
       justify-content: flex-end;
 
-      @include media('<tab') {
+      @include media("<tab") {
         justify-content: center;
       }
 
-      @include media('<sm') {
+      @include media("<sm") {
         justify-content: center;
         padding: $bump/1.5 0 $bump;
       }
@@ -72,16 +72,22 @@
 
   &__friends-get-more {
     justify-content: end;
+
+    ul,
+    ol {
+      list-style-position: inside;
+      list-style-type: disc;
+    }
   }
 
   &__partners {
     padding: 0;
     align-self: center;
 
-    @include media('<lg') {
+    @include media("<lg") {
       align-items: stretch;
     }
-    @include media('<md') {
+    @include media("<md") {
       flex-direction: column;
     }
 
@@ -90,16 +96,16 @@
       justify-content: flex-start;
       align-items: center;
 
-      @include media('<lg') {
+      @include media("<lg") {
         flex-wrap: wrap;
         padding: $bump 0;
       }
 
-      @include media('<md') {
+      @include media("<md") {
         justify-content: center;
       }
 
-      @include media('<md') {
+      @include media("<md") {
         padding: $bump 0;
         flex-direction: column;
       }
@@ -108,24 +114,25 @@
         margin-left: $bump;
         padding-left: $bump;
 
-        @include media('<md') {
+        @include media("<md") {
           margin-left: 0;
           padding: $bump/2;
         }
       }
 
-      a {
+      a,
+      span {
         margin-right: $bump;
         display: block;
 
-        @include media('<md') {
+        @include media("<md") {
           margin: 0 0 $bump;
         }
 
         &:last-of-type {
           margin-right: 0;
 
-          @include media('<md') {
+          @include media("<md") {
             margin-bottom: 0;
           }
         }
@@ -159,11 +166,11 @@
       font-size: 17px;
     }
 
-    @include media('<lg') {
+    @include media("<lg") {
       grid-template-columns: 48% 1fr 1fr;
     }
 
-    @include media('<md') {
+    @include media("<md") {
       grid-template-columns: 1fr;
       gap: 0;
     }
@@ -176,13 +183,13 @@
       display: flex;
       flex-wrap: wrap;
 
-      @include media('<md') {
+      @include media("<md") {
         flex-direction: column;
         justify-content: center;
       }
 
       &:first-of-type {
-        @include media('<md') {
+        @include media("<md") {
           padding: $bump/1.5 0 0;
         }
       }
@@ -207,7 +214,7 @@
 
     p {
       margin-bottom: 5px;
-      @include media('<md') {
+      @include media("<md") {
         margin-bottom: $bump * 1.5;
       }
     }
@@ -247,12 +254,12 @@
       grid-template-columns: 1fr 1fr;
       gap: $bump;
 
-      @include media('<md') {
+      @include media("<md") {
         grid-template-columns: 1fr;
       }
     }
 
-    @include media('<md') {
+    @include media("<md") {
       margin: 0;
 
       &:last-of-type {
@@ -264,7 +271,7 @@
   &__hr {
     display: none;
 
-    @include media('<md') {
+    @include media("<md") {
       display: block;
       border: 1px solid $c-white;
       border-width: 0 0 1px 0;
@@ -278,7 +285,7 @@
       font-size: 26px;
       line-height: 1.8;
 
-      @include media('<md') {
+      @include media("<md") {
         font-size: 20px;
       }
     }
@@ -295,7 +302,7 @@
       border: 1px $c-white solid;
       width: 153px;
 
-      @include media('<md') {
+      @include media("<md") {
         margin: 16px 0 0 0;
         width: 100%;
       }

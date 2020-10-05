@@ -78,14 +78,14 @@
 
               <ul class="list--inline article__meta-buttons">
                 <li>
-                  <a href="{{ article.url }}" class="btn btn--tertiary btn--small" aria-label="{{ 'blogs.article.read_more_title' | t: title: article.title }}">
+                  <a href="{{ article.url }}" class="a-btn  a-btn--alt  a-btn--no-arrow" aria-label="{{ 'blogs.article.read_more_title' | t: title: article.title }}">
                     {{ 'blogs.article.read_more' | t }}
                   </a>
                 </li>
 
                 {% if blog.comments_enabled? and article.comments_count > 0 %}
                   <li>
-                    <a href="{{ article.url }}#comments" class="article__comment-count btn btn--tertiary btn--small">
+                    <a href="{{ article.url }}#comments" class="article__comment-count a-btn  a-btn--alt  a-btn--no-arrow">
                       {{ 'blogs.comments.comments_with_count' | t: count: article.comments_count }}
                     </a>
                   </li>
@@ -115,7 +115,7 @@
 
             <ul class="list--inline article__meta-buttons">
               <li>
-                <a href="{{ article.url }}" class="btn btn--tertiary btn--small">
+                <a href="{{ article.url }}" class="a-btn  a-btn--alt  a-btn--no-arrow">
                   {{ 'blogs.article.read_more' | t }}
                 </a>
               </li>

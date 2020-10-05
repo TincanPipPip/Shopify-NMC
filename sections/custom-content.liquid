@@ -168,7 +168,7 @@
 
                   {%- if block.settings.show_number_articles -%}
                     {%- assign number_of_articles = blog.articles_count | default: 0 -%}
-                    <a href="{{ blog.url | default: '#' }}" class="blog-card__comment-count btn btn--tertiary btn--small" aria-label="{{ 'blogs.article.article_with_count' | t: count: number_of_articles }}: {{ blog.title }}">{{ 'blogs.article.article_with_count' | t: count: number_of_articles }}</a>
+                    <a href="{{ blog.url | default: '#' }}" class="blog-card__comment-count a-btn  a-btn--alt  a-btn--no-arrow" aria-label="{{ 'blogs.article.article_with_count' | t: count: number_of_articles }}: {{ blog.title }}">{{ 'blogs.article.article_with_count' | t: count: number_of_articles }}</a>
                   {%- endif -%}
                 </div>
             {%- when 'article' -%}
@@ -253,14 +253,14 @@
 
                   <ul class="list--inline article__meta-buttons">
                     <li>
-                      <a href="{{ article.url }}" class="btn btn--tertiary btn--small" aria-label="{{ 'blogs.article.read_more_title' | t: title: article.title }}">
+                      <a href="{{ article.url }}" class="a-btn  a-btn--alt  a-btn--no-arrow" aria-label="{{ 'blogs.article.read_more_title' | t: title: article.title }}">
                         {{ 'blogs.article.read_more' | t }}
                       </a>
                     </li>
 
                     {%- if article.comments != blank and article.comments_count > 0 -%}
                       <li>
-                        <a href="{{ article.url }}#comments" class="article__comment-count btn btn--tertiary btn--small">
+                        <a href="{{ article.url }}#comments" class="article__comment-count a-btn  a-btn--alt  a-btn--no-arrow">
                           {{ 'blogs.comments.comments_with_count' | t: count: article.comments_count }}
                         </a>
                       </li>
@@ -300,13 +300,13 @@
 
                   <ul class="list--inline article__meta-buttons">
                     <li>
-                      <a href="#" class="btn btn--tertiary btn--small">
+                      <a href="#" class="a-btn  a-btn--alt  a-btn--no-arrow">
                         {{ 'blogs.article.read_more' | t }}
                       </a>
                     </li>
 
                     <li>
-                      <a href="#" class="article__comment-count btn btn--tertiary btn--small">
+                      <a href="#" class="article__comment-count a-btn  a-btn--alt  a-btn--no-arrow">
                         {{ 'blogs.comments.comments_with_count' | t: count: 1 }}
                       </a>
                     </li>
