@@ -66,7 +66,7 @@
   <ul class="page-width list-view-items">
     {% for item in search.results %}
       <li class="list-view-item">
-        {% if item.object_type == 'product' %}
+        {% if item.object_type == 'product, tag' %}
           {% include 'product-card-list', product: item %}
         {% else %}
           <div class="product-card product-card--list">
