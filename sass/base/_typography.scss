@@ -50,8 +50,7 @@ h1,
 }
 
 h2,
-.h2,
-.perz-title {
+.h2 {
   @include font-title;
   font-size: 42px;
   // @include ms-respond(font-size, 3);
