@@ -7,7 +7,7 @@ development:
 
 production:
   password: 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
-  theme_id: "287866192027"
+  theme_id: "103688634523"
   store: nmc-recordings.myshopify.com
   ignore_files:
     - config/settings_data.json
