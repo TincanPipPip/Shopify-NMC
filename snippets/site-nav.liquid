@@ -23,7 +23,7 @@
 
         {% if link.links != blank %}
             <li class="menu-item menu-item--collapsed  site-nav--has-dropdown{% if three_level_nav %} site-nav--has-centered-dropdown{% endif %}{% if link.active %} site-nav--active{% endif %}" data-has-dropdowns>
-                <button aria-controls="SiteNavLabel-{{ child_list_handle }}" aria-expanded="false" class="menu-item menu-item__link  site-nav__link site-nav__link--main site-nav__link--button{% if link.child_active %} site-nav__link--active{% endif %}" type="button">
+                <button aria-controls="SiteNavLabel-{{ child_list_handle }}" aria-expanded="false" class="menu-item__link  site-nav__link site-nav__link--main site-nav__link--button{% if link.child_active %} site-nav__link--active{% endif %}" type="button">
                     <span class="">{{ link.title | escape }}</span>
                     {% include 'icon-chevron-down' %}
                 </button>
@@ -72,7 +72,7 @@
             </li>
         {% else %}
             <li class="menu-item">
-                <a href="{{ link.url }}" class="menu-item menu-item__link" {% if link.current %} aria-current="page" {% endif %}>
+                <a href="{{ link.url }}" class="menu-item__link" {% if link.current %} aria-current="page" {% endif %}>
                     <span class="">{{ link.title | escape }}</span>
                 </a>
             </li>

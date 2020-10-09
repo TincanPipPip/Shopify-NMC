@@ -170,7 +170,7 @@
     background-color: $c-white;
     box-shadow: 0 2px 19px -4px rgba(0, 0, 0, 0.1);
 
-    @include media("<sm") {
+    @include media("<md") {
       display: none;
     }
 
@@ -207,11 +207,20 @@
       padding: ($bump * 0.75) 0 ($bump * 0.75) ($bump * 0.3725);
     }
 
+    [data-nav="open"] & {
+      padding: ($bump * 0.75) 0 ($bump * 0.75) ($bump * 0.3725);
+    }
+
     svg {
       width: 218px;
       height: 49px;
 
       @include media("<sm") {
+        width: 105px;
+        height: 24px;
+      }
+
+      [data-nav="open"] & {
         width: 105px;
         height: 24px;
       }
@@ -224,6 +233,10 @@
       max-width: 350px;
       width: 100%;
       z-index: 10;
+
+      [data-nav="open"] & {
+        max-width: 168px;
+      }
 
       @include media("<sm") {
         max-width: 168px;
