@@ -98,7 +98,7 @@
                                 {% capture child_list_handle %}
                                     {{ link.handle }}-{{ outerLoopIndex }}
                                 {% endcapture %}
-                                <button type="button" class="btn--link js-toggle-submenu mobile-nav__link  a-btn  a-btn--alt{% if link.child_active %} mobile-nav__link--active{% endif %}" data-target="{{ child_list_handle }}" data-level="1" aria-expanded="false">
+                                <button type="button" class="btn--link js-toggle-submenu mobile-nav__link  a-btn  a-btn--alt  a-btn--no-arrow {% if link.child_active %} mobile-nav__link--active{% endif %}" data-target="{{ child_list_handle }}" data-level="1" aria-expanded="false">
                                     <span class="mobile-nav__label  a-btn  a-btn--alt  a-btn--no-arrow">{{ link.title | escape }}</span>
                                     <div class="mobile-nav__icon">
                                         {% include 'icon-chevron-right' %}
@@ -128,7 +128,7 @@
                                                 {% capture grandchild_list_handle %}
                                                     {{ childlink.handle }}-{{ outerLoopIndex }}-{{ forloop.index }}
                                                 {% endcapture %}
-                                                <button type="button" class="btn--link js-toggle-submenu mobile-nav__link mobile-nav__sublist-link  a-btn  a-btn--alt" data-target="{{ grandchild_list_handle }}" aria-expanded="false">
+                                                <button type="button" class="btn--link js-toggle-submenu mobile-nav__link mobile-nav__sublist-link  a-btn  a-btn--alt  a-btn--no-arrow" data-target="{{ grandchild_list_handle }}" aria-expanded="false">
                                                     <span class="mobile-nav__label  a-btn  a-btn--alt  a-btn--no-arrow">{{ childlink.title | escape }}</span>
                                                     <div class="mobile-nav__icon">
                                                         {% include 'icon-chevron-right' %}
@@ -146,21 +146,21 @@
                                                                     {% include 'icon-chevron-left' %}
                                                                 </button>
                                                             </div>
-                                                            <a href="{{ childlink.url }}" class="mobile-nav__sublist-link mobile-nav__sublist-header  a-btn  a-btn--alt" {% if childlink.current %} aria-current="page" {% endif %}>
+                                                            <a href="{{ childlink.url }}" class="mobile-nav__sublist-link mobile-nav__sublist-header  a-btn  a-btn--alt  a-btn--no-arrow" {% if childlink.current %} aria-current="page" {% endif %}>
                                                                 <span class="mobile-nav__label  a-btn  a-btn--alt  a-btn--no-arrow">{{ childlink.title | escape }}</span>
                                                             </a>
                                                         </div>
                                                     </li>
                                                     {% for grandchildlink in childlink.links %}
                                                         <li class="mobile-nav__item{% unless forloop.last %} border-bottom{% endunless %}">
-                                                            <a href="{{ grandchildlink.url }}" class="mobile-nav__sublist-link  a-btn  a-btn--alt" {% if grandchildlink.current %} aria-current="page" {% endif %}>
+                                                            <a href="{{ grandchildlink.url }}" class="mobile-nav__sublist-link  a-btn  a-btn--alt  a-btn--no-arrow" {% if grandchildlink.current %} aria-current="page" {% endif %}>
                                                                 <span class="mobile-nav__label  a-btn  a-btn--alt  a-btn--no-arrow">{{ grandchildlink.title | escape }}</span>
                                                             </a>
                                                         </li>
                                                     {% endfor %}
                                                 </ul>
                                             {% else %}
-                                                <a href="{{ childlink.url }}" class="mobile-nav__sublist-link  a-btn  a-btn--alt" {% if childlink.current %} aria-current="page" {% endif %}>
+                                                <a href="{{ childlink.url }}" class="mobile-nav__sublist-link  a-btn  a-btn--alt  a-btn--no-arrow" {% if childlink.current %} aria-current="page" {% endif %}>
                                                     <span class="mobile-nav__label  a-btn  a-btn--alt  a-btn--no-arrow">{{ childlink.title | escape }}</span>
                                                 </a>
                                             {% endif %}
@@ -168,7 +168,7 @@
                                     {% endfor %}
                                 </ul>
                             {% else %}
-                                <a href="{{ link.url }}" class="mobile-nav__link  a-btn  a-btn--alt{% if link.active %} mobile-nav__link--active{% endif %}" {% if link.current %} aria-current="page" {% endif %}>
+                                <a href="{{ link.url }}" class="mobile-nav__link  a-btn  a-btn--alt  a-btn--no-arrow  {% if link.active %} mobile-nav__link--active{% endif %}" {% if link.current %} aria-current="page" {% endif %}>
                                     <span class="mobile-nav__label  a-btn  a-btn--alt  a-btn--no-arrow">{{ link.title | escape }}</span>
                                 </a>
                             {% endif %}
