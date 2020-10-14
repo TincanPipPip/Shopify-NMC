@@ -24,7 +24,7 @@
   assign money_price = price | money
 -%}
 
-<dl class="price price--listing
+<div class="price price--listing
   {%- if available == false %} price--sold-out {% endif -%}
   {%- if compare_at_price > price %} price--on-sale {% endif -%}
   {%- if product.price_varies == false and product.compare_at_price_varies %} price--compare-price-hidden {% endif -%}
@@ -48,7 +48,7 @@
       - div.price__unit: Displayed when the first variant has a unit price
       - div.price__availability: Displayed when the product is sold out
   {%- endcomment -%}
-  <div class="price__regular">
+  <dl class="price__regular">
     <dt>
       <span class="visually-hidden visually-hidden--inline">{{ 'products.product.regular_price' | t }}</span>
     </dt>
@@ -61,8 +61,8 @@
         {%- endif -%}
       </span>
     </dd>
-  </div>
-  <div class="price__sale">
+  </dl>
+  <dl class="price__sale">
     <dt>
       <span class="visually-hidden visually-hidden--inline">{{ 'products.product.sale_price' | t }}</span>
     </dt>
@@ -85,8 +85,8 @@
         </s>
       </dd>
     </div>
-  </div>
-  <div class="price__unit">
+  </dl>
+  <dl class="price__unit">
     <dt>
       <span class="visually-hidden visually-hidden--inline">{{ 'products.product.unit_price_label' | t }}</span>
     </dt>
@@ -107,7 +107,7 @@
 
       <span>{{ variant.unit_price | money }}</span>{{- unit_price_separator -}}{{- unit_price_base_unit -}}
     </dd>
-  </div>
+  </dl>
   <div class="price__badges price__badges--listing">
     <span class="price__badge price__badge--sale" aria-hidden="true">
       <span>{{ 'products.product.on_sale' | t }}</span>
@@ -116,4 +116,4 @@
       <span>{{ 'products.product.sold_out' | t }}</span>
     </span>
   </div>
-</dl>
+</div>
